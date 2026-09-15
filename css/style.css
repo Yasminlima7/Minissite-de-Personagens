@@ -1,0 +1,12 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1 {
+    color: #970747;
+    text-align: center;
+}
+h2 {
+    color: #5C1025;
+}
