@@ -1,12 +1,595 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+box-sizing: border-box;
 }
-h1 {
-    color: #970747;
-    text-align: center;
+
+body {
+margin: 0;
+background-color: #0b0809;
+color: #e7ddd0;
+font-family: Georgia, "Times New Roman", serif;
 }
-h2 {
-    color: #5C1025;
+
+
+/* HEADER */
+
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+padding: 20px 7%;
+
+background-color: #100b0c;
+
+border-bottom: 1px solid #6d2630;
+}
+
+header h1 {
+margin: 5px 0 0 0;
+
+color: #e7d2ad;
+
+font-size: 28px;
+font-weight: normal;
+}
+
+.frase {
+margin: 0;
+
+color: #9d7b57;
+
+letter-spacing: 1px;
+}
+
+
+.header-itens {
+display: flex;
+gap: 28px;
+}
+
+.header-itens a {
+color: #d8c3a5;
+
+text-decoration: none;
+
+padding: 8px 5px;
+
+font-size: 15px;
+}
+
+.header-itens a:hover {
+color: #ffffff;
+
+background-color: #46151d;
+
+padding: 8px 12px;
+}
+
+
+/* MAIN */
+
+main {
+width: 86%;
+max-width: 1200px;
+
+margin: auto;
+}
+
+
+/* PÁGINA INICIAL */
+
+.inicio {
+display: flex;
+
+align-items: center;
+
+min-height: 540px;
+
+gap: 50px;
+
+border-bottom: 1px solid #4d1c23;
+}
+
+.texto-inicio {
+width: 48%;
+}
+
+.texto-inicio h2 {
+color: #e8d2b0;
+
+font-size: 38px;
+
+font-weight: normal;
+
+line-height: 1.1;
+}
+
+.texto-inicio p {
+color: #b9a99a;
+
+line-height: 1.7;
+
+font-size: 16px;
+}
+
+.pequeno {
+color: #a87945;
+
+letter-spacing: 2px;
+}
+
+.imagem-inicio {
+width: 52%;
+}
+
+.imagem-inicio img {
+width: 100%;
+height: 430px;
+
+object-fit: cover;
+
+border-radius: 4px;
+
+border: 1px solid #6e2630;
+}
+
+
+/* BOTÃO */
+
+.botao {
+display: inline-block;
+
+margin-top: 15px;
+
+padding: 12px 20px;
+
+background-color: #4b1720;
+
+color: #e3c898;
+
+text-decoration: none;
+
+border: 1px solid #9a7040;
+
+font-weight: bold;
+}
+
+.botao:hover {
+background-color: #6b202b;
+
+color: white;
+}
+
+
+/* DESTAQUES */
+
+#destaques {
+padding: 70px 0;
+}
+
+.titulo-secao {
+text-align: center;
+
+max-width: 650px;
+
+margin: auto;
+}
+
+.titulo-secao h2 {
+color: #e7d2ad;
+
+font-size: 30px;
+
+font-weight: normal;
+}
+
+.titulo-secao p {
+color: #aaa09a;
+
+line-height: 1.6;
+}
+
+.destaques {
+display: flex;
+
+gap: 20px;
+
+margin-top: 40px;
+}
+
+.destaque-card {
+flex: 1;
+
+padding: 28px;
+
+background-color: #120c0e;
+
+border: 1px solid #4f1d25;
+}
+
+.destaque-card h3 {
+color: #cda66b;
+
+font-weight: normal;
+
+font-size: 21px;
+}
+
+.destaque-card p {
+color: #aaa09a;
+
+line-height: 1.6;
+}
+
+
+/* CABEÇALHO DAS OUTRAS PÁGINAS */
+
+.cabecalho-pagina {
+padding: 70px 0 45px;
+
+border-bottom: 1px solid #4d1c23;
+}
+
+.cabecalho-pagina h2 {
+color: #e6d1ad;
+
+font-size: 42px;
+
+font-weight: normal;
+
+margin: 10px 0;
+}
+
+.cabecalho-pagina p {
+color: #aaa09a;
+
+line-height: 1.6;
+}
+
+
+/* PERSONAGENS */
+
+.galeria {
+display: flex;
+
+flex-wrap: wrap;
+
+gap: 25px;
+
+padding: 50px 0 80px;
+}
+
+.cards {
+width: 100%;
+
+background-color: #100a0c;
+
+border: 1px solid #54202a;
+
+padding: 15px;
+
+transition: 0.3s;
+}
+
+.cards:hover {
+border-color: #a06c3d;
+
+transform: translateY(-4px);
+}
+
+
+/* LINK DOS PERSONAGENS */
+
+.link-personagem {
+display: block;
+
+width: calc(33.333% - 17px);
+
+color: inherit;
+
+text-decoration: none;
+}
+
+.link-personagem:hover .cards {
+border-color: #a06c3d;
+
+transform: translateY(-4px);
+}
+
+
+.cards img {
+width: 100%;
+
+height: 260px;
+
+object-fit: cover;
+
+border-radius: 3px;
+}
+
+.cards h3 {
+color: #dfc28f;
+
+font-size: 20px;
+
+font-weight: normal;
+
+margin: 15px 0 8px;
+}
+
+.cards p {
+color: #aaa09a;
+
+line-height: 1.5;
+
+font-size: 14px;
+}
+
+
+/* CURIOSIDADES */
+
+.curiosidades {
+display: flex;
+
+gap: 45px;
+
+padding: 55px 0;
+}
+
+.imagem-curiosidade {
+width: 45%;
+}
+
+.imagem-curiosidade img {
+width: 100%;
+
+height: 400px;
+
+object-fit: cover;
+
+border-radius: 4px;
+
+border: 1px solid #60232c;
+}
+
+.lista-curiosidades {
+width: 55%;
+}
+
+.curiosidade {
+display: flex;
+
+gap: 20px;
+
+padding: 20px 0;
+
+border-bottom: 1px solid #3b1a20;
+}
+
+.numero {
+color: #c99d58;
+
+font-size: 25px;
+
+margin: 0;
+}
+
+.curiosidade h3 {
+color: #e0c99f;
+
+margin: 0 0 8px;
+
+font-weight: normal;
+}
+
+.curiosidade p {
+color: #aaa09a;
+
+line-height: 1.5;
+
+margin: 0;
+}
+
+
+/* LINK EXTERNO */
+
+.link-externo {
+text-align: center;
+
+padding: 35px;
+
+margin-bottom: 70px;
+
+background-color: #110b0d;
+
+border: 1px solid #4d1c24;
+}
+
+.link-externo h3 {
+color: #dec18d;
+
+font-weight: normal;
+}
+
+.link-externo p {
+color: #aaa09a;
+}
+
+.link-externo a {
+display: inline-block;
+
+padding: 10px 18px;
+
+color: #e0c28d;
+
+background-color: #43151e;
+
+text-decoration: none;
+
+font-weight: bold;
+}
+
+.link-externo a:hover {
+background-color: #681f2b;
+
+color: white;
+}
+
+
+/* PÁGINA INDIVIDUAL DO PERSONAGEM */
+
+.personagem-individual {
+display: flex;
+
+align-items: center;
+
+gap: 50px;
+
+padding: 70px 0;
+
+border-bottom: 1px solid #4d1c23;
+}
+
+.personagem-individual article {
+width: 50%;
+}
+
+.personagem-individual h2 {
+color: #e6d1ad;
+
+font-size: 42px;
+
+font-weight: normal;
+}
+
+.personagem-individual p {
+color: #aaa09a;
+
+line-height: 1.7;
+}
+
+.personagem-individual img {
+width: 100%;
+
+height: 450px;
+
+object-fit: cover;
+
+border: 1px solid #6e2630;
+
+border-radius: 4px;
+}
+
+.informacao-personagem {
+padding: 50px 0 80px;
+}
+
+.informacao-personagem h3 {
+color: #dfc28f;
+
+font-size: 25px;
+
+font-weight: normal;
+}
+
+.informacao-personagem p {
+color: #aaa09a;
+
+line-height: 1.7;
+}
+
+.informacao-personagem a {
+display: inline-block;
+
+margin-top: 20px;
+
+padding: 10px 18px;
+
+color: #e0c28d;
+
+background-color: #43151e;
+
+border: 1px solid #6e2630;
+
+text-decoration: none;
+}
+
+.informacao-personagem a:hover {
+background-color: #681f2b;
+
+color: white;
+}
+
+
+/* FOOTER */
+
+footer {
+text-align: center;
+
+padding: 25px;
+
+color: #766b65;
+}
+
+footer hr {
+border: 0;
+
+border-top: 1px solid #3e1b21;
+
+margin-bottom: 20px;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+header {
+flex-direction: column;
+
+gap: 20px;
+
+text-align: center;
+}
+
+.inicio {
+flex-direction: column;
+
+padding: 50px 0;
+}
+
+.texto-inicio,
+.imagem-inicio {
+width: 100%;
+}
+
+.destaques {
+flex-direction: column;
+}
+
+.link-personagem {
+width: 100%;
+}
+
+.cards {
+width: 100%;
+}
+
+.curiosidades {
+flex-direction: column;
+}
+
+.imagem-curiosidade,
+.lista-curiosidades {
+width: 100%;
+}
+
+.personagem-individual {
+flex-direction: column;
+}
+
+.personagem-individual article {
+width: 100%;
+}
+
 }
