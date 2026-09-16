@@ -2,124 +2,458 @@
 <html lang="pt-BR">
 
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="css/style.css">
-<title>The Vampire Diaries</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Vampire Diaries</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<header>
+    <!-- =====================================
+         HEADER
+    ====================================== -->
 
-<section>
-<p class="frase"><small><b>Entre segredos, escolhas e eternidade</b></small></p>
-<h1>The Vampire Diaries</h1>
-</section>
+    <header>
 
-<section class="header-itens">
-<a href="index.html"><b>Início</b></a>
-<a href="pages/personagens.html"><b>Personagens</b></a>
-<a href="pages/curiosidades.html"><b>Curiosidades</b></a>
-</section>
+        <section>
 
-</header>
+            <p class="frase">
+                <small>
+                    <b>Entre segredos, escolhas e eternidade</b>
+                </small>
+            </p>
 
+            <h1>The Vampire Diaries</h1>
 
-<main>
-
-<section class="inicio">
-
-<article class="texto-inicio">
-
-<p class="pequeno">
-<small><b>Bem-vindo a Mystic Falls</b></small>
-</p>
-
-<h2>Onde cada segredo tem uma história.</h2>
-
-<p>
-Mystic Falls parece apenas uma pequena cidade, mas por trás
-de sua aparência tranquila existem vampiros, bruxas,
-lobisomens e muitos segredos.
-</p>
-
-<p>
-The Vampire Diaries acompanha personagens que enfrentam
-escolhas difíceis, amizades, mistérios e histórias que
-atravessam gerações.
-</p>
-
-<a class="botao" href="#destaques">Ver destaques</a>
-
-</article>
-
-<article class="imagem-inicio">
-<img src="img/mystic-falls.png" alt="Mystic Falls">
-</article>
-
-</section>
+        </section>
 
 
-<section id="destaques">
+        <nav class="header-itens">
 
-<article class="titulo-secao">
+            <a href="index.html">
+                <b>Início</b>
+            </a>
 
-<p class="pequeno">
-<small><b>THE VAMPIRE DIARIES</b></small>
-</p>
+            <a href="pages/personagens.html">
+                <b>Personagens</b>
+            </a>
 
-<h2>Uma história de mistério e escolhas</h2>
+            <a href="pages/curiosidades.html">
+                <b>Curiosidades</b>
+            </a>
 
-<p>
-Uma cidade, vários segredos e personagens que mudaram
-completamente suas vidas ao descobrir o mundo sobrenatural.
-</p>
+        </nav>
 
-</article>
-
-
-<section class="destaques">
-
-<article class="destaque-card">
-<h3>Mystic Falls</h3>
-<p>
-Uma pequena cidade fictícia onde acontecimentos
-sobrenaturais fazem parte de sua história.
-</p>
-</article>
-
-<article class="destaque-card">
-<h3>O mundo sobrenatural</h3>
-<p>
-Vampiros, bruxas e outras criaturas fazem parte
-dos mistérios da cidade.
-</p>
-</article>
-
-<article class="destaque-card">
-<h3>Laços eternos</h3>
-<p>
-Amizades, família e escolhas estão presentes
-durante toda a história.
-</p>
-</article>
-
-</section>
-
-</section>
-
-</main>
+    </header>
 
 
-<footer>
+    <!-- =====================================
+         CONTEÚDO PRINCIPAL
+    ====================================== -->
 
-<hr>
+    <main>
 
-<p>
-<small>The Vampire Diaries • by yasmin</small>
-</p>
 
-</footer>
+        <!-- =====================================
+             INÍCIO
+        ====================================== -->
+
+        <section class="inicio">
+
+
+            <!-- TEXTO -->
+
+            <article class="texto-inicio">
+
+                <p class="pequeno">
+                    <small>
+                        <b>Bem-vindo a Mystic Falls</b>
+                    </small>
+                </p>
+
+                <h2>
+                    Onde cada segredo tem uma história.
+                </h2>
+
+                <p>
+                    Mystic Falls parece apenas uma pequena cidade,
+                    mas por trás de sua aparência tranquila existem
+                    vampiros, bruxas, lobisomens e muitos segredos.
+                </p>
+
+                <p>
+                    The Vampire Diaries acompanha personagens que
+                    enfrentam escolhas difíceis, amizades, mistérios
+                    e histórias que atravessam gerações.
+                </p>
+
+                <a
+                    class="botao"
+                    href="#destaques"
+                >
+                    Ver destaques
+                </a>
+
+            </article>
+
+
+            <!-- =====================================
+                 GALERIA DE IMAGENS
+            ====================================== -->
+
+            <article class="imagem-inicio">
+
+                <div class="galeria-inicio">
+
+                    <img
+                        id="imagemPrincipal"
+                        src="img/mystic-falls.png"
+                        alt="The Vampire Diaries"
+                        title="Clique para ver a próxima imagem"
+                    >
+
+                    <!-- CONTADOR -->
+
+                    <div class="indicador-imagem">
+
+                        <span id="numeroImagem">
+                            1
+                        </span>
+
+                        / 5
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOLINHAS DA GALERIA -->
+
+                <div class="bolinhas-galeria">
+
+                    <button
+                        class="bolinha ativa"
+                        data-imagem="0"
+                        type="button"
+                        aria-label="Mostrar imagem 1"
+                    ></button>
+
+                    <button
+                        class="bolinha"
+                        data-imagem="1"
+                        type="button"
+                        aria-label="Mostrar imagem 2"
+                    ></button>
+
+                    <button
+                        class="bolinha"
+                        data-imagem="2"
+                        type="button"
+                        aria-label="Mostrar imagem 3"
+                    ></button>
+
+                    <button
+                        class="bolinha"
+                        data-imagem="3"
+                        type="button"
+                        aria-label="Mostrar imagem 4"
+                    ></button>
+
+                    <button
+                        class="bolinha"
+                        data-imagem="4"
+                        type="button"
+                        aria-label="Mostrar imagem 5"
+                    ></button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =====================================
+             DESTAQUES
+        ====================================== -->
+
+        <section id="destaques">
+
+
+            <!-- TÍTULO -->
+
+            <article class="titulo-secao">
+
+                <p class="pequeno">
+                    <small>
+                        <b>THE VAMPIRE DIARIES</b>
+                    </small>
+                </p>
+
+                <h2>
+                    Uma história de mistério e escolhas
+                </h2>
+
+                <p>
+                    Uma cidade, vários segredos e personagens
+                    que mudaram completamente suas vidas ao
+                    descobrir o mundo sobrenatural.
+                </p>
+
+            </article>
+
+
+            <!-- CARDS -->
+
+            <section class="destaques">
+
+
+                <!-- MYSTIC FALLS -->
+
+                <a
+                    class="link-destaque"
+                    href="pages/mysticfalls.html"
+                >
+
+                    <article class="destaque-card">
+
+                        <h3>
+                            Mystic Falls
+                        </h3>
+
+                        <p>
+                            Conheça a cidade onde segredos,
+                            famílias e acontecimentos sobrenaturais
+                            se encontram.
+                        </p>
+
+                        <span>
+                            Saiba mais →
+                        </span>
+
+                    </article>
+
+                </a>
+
+
+                <!-- SOBRENATURAL -->
+
+                <a
+                    class="link-destaque"
+                    href="pages/sobrenatural.html"
+                >
+
+                    <article class="destaque-card">
+
+                        <h3>
+                            O Sobrenatural
+                        </h3>
+
+                        <p>
+                            Vampiros, bruxas e outras criaturas
+                            fazem parte dos mistérios que cercam
+                            Mystic Falls.
+                        </p>
+
+                        <span>
+                            Saiba mais →
+                        </span>
+
+                    </article>
+
+                </a>
+
+
+                <!-- LAÇOS E ESCOLHAS -->
+
+                <a
+                    class="link-destaque"
+                    href="pages/lacos.html"
+                >
+
+                    <article class="destaque-card">
+
+                        <h3>
+                            Laços e Escolhas
+                        </h3>
+
+                        <p>
+                            Família, amizade e decisões difíceis
+                            transformam a vida dos personagens
+                            ao longo da história.
+                        </p>
+
+                        <span>
+                            Saiba mais →
+                        </span>
+
+                    </article>
+
+                </a>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        <hr>
+
+        <p>
+            <small>
+                The Vampire Diaries • by yasmin
+            </small>
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================
+         JAVASCRIPT DA GALERIA
+    ====================================== -->
+
+    <script>
+
+        /* LISTA DAS 5 IMAGENS */
+
+        const imagensGaleria = [
+
+            "img/mystic-falls.png",
+
+            "img/mystic-falls1.png",
+
+            "img/mystic-falls2.png",
+
+            "img/mystic-falls3.png",
+
+            "img/mystic-falls4.png"
+
+        ];
+
+
+        /* COMEÇA NA PRIMEIRA IMAGEM */
+
+        let imagemAtual = 0;
+
+
+        /* ELEMENTOS DA GALERIA */
+
+        const imagemPrincipal =
+            document.getElementById("imagemPrincipal");
+
+        const numeroImagem =
+            document.getElementById("numeroImagem");
+
+        const bolinhas =
+            document.querySelectorAll(".bolinha");
+
+
+        /* =====================================
+           FUNÇÃO PARA MOSTRAR A IMAGEM
+        ====================================== */
+
+        function mostrarImagem(numero) {
+
+            imagemAtual = numero;
+
+
+            /* TROCA A IMAGEM */
+
+            imagemPrincipal.src =
+                imagensGaleria[imagemAtual];
+
+
+            /* ATUALIZA O NÚMERO */
+
+            numeroImagem.textContent =
+                imagemAtual + 1;
+
+
+            /* REMOVE A BOLINHA ATIVA */
+
+            bolinhas.forEach(
+                function(bolinha) {
+
+                    bolinha.classList.remove("ativa");
+
+                }
+            );
+
+
+            /* ATIVA A BOLINHA DA FOTO ATUAL */
+
+            bolinhas[imagemAtual]
+                .classList.add("ativa");
+
+        }
+
+
+        /* =====================================
+           CLICAR NA IMAGEM
+        ====================================== */
+
+        imagemPrincipal.addEventListener(
+            "click",
+            function() {
+
+                imagemAtual++;
+
+
+                /* DEPOIS DA FOTO 5,
+                   VOLTA PARA A FOTO 1 */
+
+                if (
+                    imagemAtual >=
+                    imagensGaleria.length
+                ) {
+
+                    imagemAtual = 0;
+
+                }
+
+
+                mostrarImagem(imagemAtual);
+
+            }
+        );
+
+
+        /* =====================================
+           CLICAR NAS BOLINHAS
+        ====================================== */
+
+        bolinhas.forEach(
+            function(bolinha) {
+
+                bolinha.addEventListener(
+                    "click",
+                    function() {
+
+                        const numero =
+                            Number(
+                                bolinha.dataset.imagem
+                            );
+
+                        mostrarImagem(numero);
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
 
 </body>
+
 </html>
