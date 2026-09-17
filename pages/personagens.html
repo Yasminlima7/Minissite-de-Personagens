@@ -15,6 +15,56 @@
         rel="stylesheet"
         href="../css/style.css"
     >
+
+<style>
+#cardQetsiyah {
+    position: relative;
+    overflow: hidden;
+}
+.bloqueio-qetsiyah {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    background-color: rgba(11, 8, 9, 0.96);
+    border: 1px solid #6d2630;
+}
+.bloqueio-qetsiyah h3 {
+    margin: 8px 0;
+    color: #e7d2ad;
+}
+.bloqueio-qetsiyah p {
+    color: #aaa09a;
+}
+.bloqueio-simbolo {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+#verificarChaveQetsiyah {
+    margin-top: 12px;
+    padding: 10px 16px;
+    color: #e3c898;
+    background-color: #4b1720;
+    border: 1px solid #9a7040;
+    cursor: pointer;
+}
+.mensagem-qetsiyah {
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+.bloqueio-qetsiyah.acesso-concedido {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .7s;
+}
+</style>
+
 </head>
 
 
@@ -714,7 +764,7 @@
 
             <!-- REBEKAH -->
 
-            <article
+            <article id="cardQetsiyah"
                 class="card card-registro"
                 data-nome="rebekah mikaelson"
                 data-tipo="vampiro original"
@@ -861,6 +911,16 @@
                 >
                     Abrir arquivo →
                 </a>
+
+            
+                <section class="bloqueio-qetsiyah" id="bloqueioQetsiyah">
+                    <p class="bloqueio-simbolo">🔒</p>
+                    <p class="pequeno"><small><b>REGISTRO 009 • ACESSO RESTRITO</b></small></p>
+                    <h3>ARQUIVO BLOQUEADO</h3>
+                    <p>Uma chave é necessária para liberar este registro.</p>
+                    <button id="verificarChaveQetsiyah" type="button">VERIFICAR CHAVE</button>
+                    <p id="mensagemQetsiyah" class="mensagem-qetsiyah">CHAVE NÃO ENCONTRADA</p>
+                </section>
 
             </article>
 
@@ -1492,19 +1552,49 @@
         function atualizarRelogio(){const a=new Date(),h=String(a.getHours()).padStart(2,"0"),m=String(a.getMinutes()).padStart(2,"0"),e=document.getElementById("relogioMystic");if(e)e.textContent=`MYSTIC FALLS • ${h}:${m}`;} atualizarRelogio();setInterval(atualizarRelogio,1000);
     
 // ===== ARQUIVO BLOQUEADO + MODO INVESTIGAÇÃO =====
-(function(){const inv=document.getElementById('modoInvestigar');if(inv)inv.addEventListener('click',()=>{document.body.classList.toggle('modo-investigacao');inv.classList.toggle('ativo');});const card=document.getElementById('arquivoPersonagemBloqueado'),lock=document.getElementById('bloqueioPersonagem'),btn=document.getElementById('desbloquearPersonagem'),ok=document.getElementById('acessoConcedido');function aberto(){return localStorage.getItem('mysticPersonagemSecretoV2')==='1'}function render(){if(card)card.classList.toggle('arquivo-desbloqueado',aberto())}if(btn)btn.addEventListener('click',()=>{if(localStorage.getItem('mysticChave')!=='1'){btn.textContent='CHAVE NÃO ENCONTRADA';return;}localStorage.setItem('mysticPersonagemSecretoV2','1');render();ok.classList.add('mostrar');setTimeout(()=>ok.classList.remove('mostrar'),1800);});render();const e=document.getElementById('eventoSurpresa');if(e)setTimeout(()=>{e.classList.add('mostrar');setTimeout(()=>e.classList.remove('mostrar'),4500)},120000);})();
+(function(){const inv=document.getElementById('modoInvestigar');if(inv)inv.addEventListener('click',()=>{document.body.classList.toggle('modo-investigacao');inv.classList.toggle('ativo');});const card=document.getElementById('arquivoPersonagemBloqueado'),lock=document.getElementById('bloqueioPersonagem'),btn=document.getElementById('desbloquearPersonagem'),ok=document.getElementById('acessoConcedido');function aberto(){return localStorage.getItem('mysticPersonagemSecretoV3')==='1'}function render(){if(card)card.classList.toggle('arquivo-desbloqueado',aberto())}if(btn)btn.addEventListener('click',()=>{if(localStorage.getItem('mysticChave')!=='1'){btn.textContent='CHAVE NÃO ENCONTRADA';return;}localStorage.setItem('mysticPersonagemSecretoV3','1');render();ok.classList.add('mostrar');setTimeout(()=>ok.classList.remove('mostrar'),1800);});render();const e=document.getElementById('eventoSurpresa');if(e)setTimeout(()=>{e.classList.add('mostrar');setTimeout(()=>e.classList.remove('mostrar'),4500)},120000);})();
 </script>
 
 <script>
 (function(){
  const h=document.querySelector('header'); if(!h||document.getElementById('nivelTopo')) return;
  const b=document.createElement('span'); b.id='nivelTopo'; b.className='nivel-topo';
- const keys=['mysticHome','mysticPersonagens','mysticDocumento1864','mysticChave','mysticCarta','mysticCuriosidades','mysticArquivo7','mysticKatherineKP','mysticPersonagemSecretoV2'];
+ const keys=['mysticHome','mysticPersonagens','mysticDocumento1864','mysticChave','mysticCarta','mysticCuriosidades','mysticArquivo7','mysticKatherineKP','mysticPersonagemSecretoV3'];
  const n=keys.filter(k=>localStorage.getItem(k)==='1').length;
  b.textContent=n===keys.length?'ACESSO TOTAL':localStorage.getItem('mysticArquivo7')==='1'?'NÍVEL III':localStorage.getItem('mysticChave')==='1'?'NÍVEL II':'NÍVEL I';
  h.appendChild(b);
 })();
 </script>
+
+<script>
+(function () {
+    const bloqueio = document.getElementById("bloqueioQetsiyah");
+    const botao = document.getElementById("verificarChaveQetsiyah");
+    const mensagem = document.getElementById("mensagemQetsiyah");
+    const chaveDesbloqueio = "mysticQetsiyahDesbloqueadaV4";
+
+    if (!bloqueio || !botao || !mensagem) return;
+
+    if (localStorage.getItem(chaveDesbloqueio) === "1") {
+        bloqueio.style.display = "none";
+    }
+
+    botao.addEventListener("click", function () {
+        if (localStorage.getItem("mysticChave") === "1") {
+            mensagem.textContent = "ACESSO CONCEDIDO";
+            bloqueio.classList.add("acesso-concedido");
+            localStorage.setItem(chaveDesbloqueio, "1");
+
+            setTimeout(function () {
+                bloqueio.style.display = "none";
+            }, 700);
+        } else {
+            mensagem.textContent = "CHAVE NÃO ENCONTRADA";
+        }
+    });
+})();
+</script>
+
 </body>
 
 </html>
