@@ -10,447 +10,1433 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="topo">
 
-    <!-- =====================================
-         HEADER
-    ====================================== -->
+    <!-- =========================================
+         TELA DE ENTRADA
+    ========================================== -->
 
-    <header>
+    <section id="telaEntrada" class="tela-entrada">
+        <div class="entrada-caixa">
+            <p class="entrada-simbolo">✦</p>
+            <p class="entrada-pequeno">MYSTIC FALLS</p>
+            <h2>Arquivos Confidenciais</h2>
+            <div class="entrada-linha"></div>
 
-        <section>
+            <div class="campo-acesso">
+                <label for="nomeVisitante">IDENTIDADE</label>
+                <input type="text" id="nomeVisitante" placeholder="Digite seu nome..." autocomplete="off">
+            </div>
 
-            <p class="frase">
-                <small>
-                    <b>Entre segredos, escolhas e eternidade</b>
-                </small>
-            </p>
+            <div class="registro-secreto">
+                <p class="registro-titulo">REGISTRO ENCONTRADO</p>
+                <button id="abrirRegistro" class="documento-lacrado" type="button">
+                    <span class="documento-numero">ARQUIVO Nº 01</span>
+                    <span class="documento-simbolo">✦</span>
+                    <strong>CONFIDENCIAL</strong>
+                    <span class="documento-abrir">ABRIR REGISTRO</span>
+                </button>
 
-            <h1>The Vampire Diaries</h1>
+                <div id="conteudoRegistro" class="conteudo-registro">
+                    <div class="ano-fragmentado">
+                        <span>18</span>
+                        <div class="divisor-ano"></div>
+                        <span>64</span>
+                    </div>
+                    <p class="simbolo-registro">✦</p>
+                </div>
+            </div>
 
-        </section>
+            <div class="campo-acesso campo-codigo">
+                <label for="codigoAcesso">CÓDIGO DE ACESSO</label>
+                <input type="text" id="codigoAcesso" placeholder="_ _ _ _" maxlength="4" inputmode="numeric" autocomplete="off">
+            </div>
 
+            <button id="verificarCodigo" type="button">Verificar acesso</button>
+            <p id="mensagemAcesso" class="mensagem-acesso"></p>
 
-        <nav class="header-itens">
-
-            <a href="index.html">
-                <b>Início</b>
-            </a>
-
-            <a href="pages/personagens.html">
-                <b>Personagens</b>
-            </a>
-
-            <a href="pages/curiosidades.html">
-                <b>Curiosidades</b>
-            </a>
-
-        </nav>
-
-    </header>
-
-
-    <!-- =====================================
-         CONTEÚDO PRINCIPAL
-    ====================================== -->
-
-    <main>
-
-
-        <!-- =====================================
-             INÍCIO
-        ====================================== -->
-
-        <section class="inicio">
+            <div id="acessoConfirmado" class="acesso-confirmado">
+                <p class="simbolo-autorizado">✓</p>
+                <p>IDENTIDADE: <strong id="nomeConfirmado">VISITANTE</strong></p>
+                <p>ACESSO: <strong class="acesso-liberado">AUTORIZADO</strong></p>
+                <button id="entrarArquivos" type="button">Entrar nos arquivos</button>
+            </div>
+        </div>
+    </section>
 
 
-            <!-- TEXTO -->
+    <!-- =========================================
+         SITE
+    ========================================== -->
 
-            <article class="texto-inicio">
+    <div id="avisoSessao" class="aviso-flutuante">SESSÃO RESTAURADA</div>
+    <div id="observado" class="aviso-observado">👁 Você está sendo observado.</div>
+    <div id="marcaCursor" class="marca-cursor"></div>
 
-                <p class="pequeno">
+    <div id="conteudoSite">
+
+
+        <!-- HEADER -->
+
+        <header>
+
+            <section>
+
+                <p class="frase">
                     <small>
-                        <b>Bem-vindo a Mystic Falls</b>
+                        <b>
+                            Entre segredos, escolhas e eternidade
+                        </b>
                     </small>
                 </p>
 
-                <h2>
-                    Onde cada segredo tem uma história.
-                </h2>
+                <h1>
+                    The Vampire Diaries
+                </h1>
 
-                <p>
-                    Mystic Falls parece apenas uma pequena cidade,
-                    mas por trás de sua aparência tranquila existem
-                    vampiros, bruxas, lobisomens e muitos segredos.
-                </p>
+            </section>
 
-                <p>
-                    The Vampire Diaries acompanha personagens que
-                    enfrentam escolhas difíceis, amizades, mistérios
-                    e histórias que atravessam gerações.
-                </p>
 
-                <a
-                    class="botao"
-                    href="#destaques"
-                >
-                    Ver destaques
+            <div class="relogio-mystic" id="relogioMystic">MYSTIC FALLS • --:--</div>
+            <nav class="header-itens">
+
+                <a href="index.html">
+                    Início
                 </a>
 
-            </article>
+                <a href="pages/personagens.html">
+                    Personagens
+                </a>
+
+                <a href="pages/curiosidades.html">
+                    Curiosidades
+                </a>
+
+            </nav>
+
+        </header>
 
 
-            <!-- =====================================
-                 GALERIA DE IMAGENS
-            ====================================== -->
+        <main>
 
-            <article class="imagem-inicio">
 
-                <div class="galeria-inicio">
+            <!-- =========================================
+                 HERO / GALERIA
+            ========================================== -->
+
+            <section class="inicio">
+
+                <article class="texto-inicio">
+
+                    <p class="pequeno">
+                        <small>
+                            <b>BEM-VINDO A MYSTIC FALLS</b>
+                        </small>
+                    </p>
+
+                    <h2>
+                        Onde cada segredo tem uma história.
+                    </h2>
+
+                    <p>
+                        Mystic Falls parece apenas uma pequena cidade,
+                        mas por trás de sua aparência tranquila existem
+                        vampiros, bruxas, famílias antigas e segredos
+                        escondidos há gerações.
+                    </p>
+
+                    <p>
+                        Explore os arquivos, conheça os personagens
+                        e descubra o que existe por trás das histórias
+                        dessa cidade.
+                    </p>
+
+                    <a class="botao" href="#destaques">
+                        Começar a explorar
+                    </a>
+
+                </article>
+
+
+                <article class="imagem-inicio">
+
+                    <div class="galeria-inicio">
+
+                        <img
+                            id="imagemPrincipal"
+                            src="img/mystic-falls.png"
+                            alt="Mystic Falls"
+                        >
+
+                        <div class="legenda-galeria">
+
+                            <p id="numeroGaleria">
+                                01 / 05
+                            </p>
+
+                            <h3 id="tituloGaleria">
+                                Mystic Falls
+                            </h3>
+
+                            <p id="textoGaleria">
+                                Uma cidade onde nada é exatamente
+                                o que parece.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bolinhas-galeria">
+
+                        <button class="bolinha ativa" data-imagem="0" type="button"></button>
+                        <button class="bolinha" data-imagem="1" type="button"></button>
+                        <button class="bolinha" data-imagem="2" type="button"></button>
+                        <button class="bolinha" data-imagem="3" type="button"></button>
+                        <button class="bolinha" data-imagem="4" type="button"></button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =========================================
+                 FRASE IMPACTANTE
+            ========================================== -->
+
+            <section class="frase-impactante">
+
+                <p>
+                    MYSTIC FALLS
+                </p>
+
+                <h2>
+                    Toda cidade tem segredos.
+                </h2>
+
+                <h3>
+                    Mystic Falls apenas tem mais
+                    do que deveria.
+                </h3>
+
+                <span>✦</span>
+
+            </section>
+
+
+            <!-- =========================================
+                 ESCOLHA SEU CAMINHO
+            ========================================== -->
+
+            <section id="destaques">
+
+                <article class="titulo-secao">
+
+                    <p class="pequeno">
+                        <small>
+                            <b>ESCOLHA SEU CAMINHO</b>
+                        </small>
+                    </p>
+
+                    <h2>
+                        Por onde você quer começar?
+                    </h2>
+
+                    <p>
+                        Cada caminho revela uma parte diferente
+                        dos mistérios de Mystic Falls.
+                    </p>
+
+                </article>
+
+
+                <section class="destaques">
+
+                    <a class="link-destaque" href="pages/personagens.html">
+
+                        <article class="destaque-card caminho-card">
+
+                            <p class="numero-caminho">
+                                01
+                            </p>
+
+                            <h3>
+                                Sangue
+                            </h3>
+
+                            <p>
+                                Conheça vampiros, Originais e
+                                personagens que tiveram suas vidas
+                                transformadas pelo sobrenatural.
+                            </p>
+
+                            <span>
+                                Explorar personagens →
+                            </span>
+
+                        </article>
+
+                    </a>
+
+
+                    <a class="link-destaque" href="pages/personagens.html">
+
+                        <article class="destaque-card caminho-card">
+
+                            <p class="numero-caminho">
+                                02
+                            </p>
+
+                            <h3>
+                                Magia
+                            </h3>
+
+                            <p>
+                                Descubra as bruxas e forças mágicas
+                                que mudaram acontecimentos durante
+                                gerações.
+                            </p>
+
+                            <span>
+                                Investigar magia →
+                            </span>
+
+                        </article>
+
+                    </a>
+
+
+                    <a class="link-destaque" href="pages/curiosidades.html">
+
+                        <article class="destaque-card caminho-card">
+
+                            <p class="numero-caminho">
+                                03
+                            </p>
+
+                            <h3>
+                                Mistério
+                            </h3>
+
+                            <p>
+                                Abra arquivos confidenciais e
+                                descubra histórias escondidas
+                                em Mystic Falls.
+                            </p>
+
+                            <span>
+                                Abrir arquivos →
+                            </span>
+
+                        </article>
+
+                    </a>
+
+                </section>
+
+            </section>
+
+
+            <!-- =========================================
+                 NÚMEROS
+            ========================================== -->
+
+            <section class="numeros-mystic">
+
+                <p class="pequeno">
+                    <small>
+                        <b>UMA CIDADE. MUITOS SEGREDOS.</b>
+                    </small>
+                </p>
+
+
+                <section class="grade-numeros">
+
+                    <article>
+                        <strong>8</strong>
+                        <span>Temporadas</span>
+                    </article>
+
+                    <article>
+                        <strong>171</strong>
+                        <span>Episódios</span>
+                    </article>
+
+                    <article>
+                        <strong>9</strong>
+                        <span>Registros</span>
+                    </article>
+
+                    <article>
+                        <strong>6</strong>
+                        <span>Arquivos</span>
+                    </article>
+
+                </section>
+
+            </section>
+
+
+            <!-- =========================================
+                 DOSSIÊ KATHERINE
+            ========================================== -->
+
+            <section class="dossie-destaque">
+
+                <p class="marca-classified">
+                    CLASSIFIED
+                </p>
+
+
+                <article class="foto-dossie">
+
+                    <p class="registro-dossie">
+                        REGISTRO 004
+                    </p>
 
                     <img
-                        id="imagemPrincipal"
-                        src="img/mystic-falls.png"
-                        alt="The Vampire Diaries"
-                        title="Clique para ver a próxima imagem"
+                        src="img/Katherine.png"
+                        alt="Katherine Pierce"
                     >
 
-                    <!-- CONTADOR -->
+                </article>
 
-                    <div class="indicador-imagem">
 
-                        <span id="numeroImagem">
-                            1
-                        </span>
+                <article class="conteudo-dossie">
 
-                        / 5
+                    <p class="pequeno">
+                        <small>
+                            <b>PERSONAGEM EM DESTAQUE</b>
+                        </small>
+                    </p>
 
+                    <h2>
+                        Katherine Pierce
+                    </h2>
+
+                    <p class="nome-original">
+                        Katerina Petrova
+                    </p>
+
+
+                    <div class="dados-dossie">
+
+                        <p>
+                            <span>ESPÉCIE</span>
+                            Vampira
+                        </p>
+
+                        <p>
+                            <span>ORIGEM</span>
+                            Bulgária
+                        </p>
+
+                        <p>
+                            <span>REGISTRO</span>
+                            004
+                        </p>
+
+                    </div>
+
+
+                    <p>
+                        Katherine possui uma longa história
+                        ligada aos irmãos Salvatore, à linhagem
+                        Petrova e aos acontecimentos sobrenaturais
+                        que chegaram até Mystic Falls.
+                    </p>
+
+                    <a class="botao" href="pages/katherine.html">
+                        Abrir dossiê →
+                    </a>
+
+                </article>
+
+            </section>
+
+
+            <!-- =========================================
+                 LINHA DO TEMPO
+            ========================================== -->
+
+            <section class="linha-tempo" id="linha-do-tempo">
+
+                <article class="titulo-secao">
+
+                    <p class="pequeno">
+                        <small>
+                            <b>ARQUIVOS HISTÓRICOS</b>
+                        </small>
+                    </p>
+
+                    <h2>
+                        Ecos do passado
+                    </h2>
+
+                    <p>
+                        Algumas histórias de Mystic Falls
+                        começaram muito antes do presente.
+                    </p>
+
+                </article>
+
+
+                <article class="evento-tempo">
+
+                    <button class="ano-tempo ano-secreto" id="ano1864" type="button" title="1864">1864</button>
+
+                    <div class="conteudo-tempo">
+
+                        <h3>
+                            O passado dos Salvatore
+                        </h3>
+
+                        <p>
+                            Stefan e Damon Salvatore tiveram
+                            suas vidas profundamente alteradas
+                            durante o século XIX.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="evento-tempo">
+
+                    <div class="ano-tempo">
+                        2009
+                    </div>
+
+                    <div class="conteudo-tempo">
+
+                        <h3>
+                            Uma nova história começa
+                        </h3>
+
+                        <p>
+                            A vida de Elena Gilbert começa
+                            a se cruzar com a história
+                            dos irmãos Salvatore.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="evento-tempo">
+
+                    <div class="ano-tempo">
+                        HOJE
+                    </div>
+
+                    <div class="conteudo-tempo">
+
+                        <h3>
+                            Os arquivos permanecem
+                        </h3>
+
+                        <p>
+                            As histórias, personagens e segredos
+                            de Mystic Falls continuam registrados
+                            neste arquivo.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =========================================
+                 CARTA
+            ========================================== -->
+
+            <section class="mensagem-encontrada">
+
+                <article>
+
+                    <p class="icone-carta">
+                        ✉
+                    </p>
+
+                    <p class="pequeno">
+                        <small>
+                            <b>DOCUMENTO ENCONTRADO</b>
+                        </small>
+                    </p>
+
+                    <h2>
+                        Uma mensagem foi deixada para você.
+                    </h2>
+
+                    <p>
+                        Remetente desconhecido • Mystic Falls
+                    </p>
+
+
+                    <button id="abrirCarta" type="button">
+                        Abrir carta
+                    </button>
+
+
+                    <div id="conteudoCarta">
+
+                        <p class="data-carta">
+                            MYSTIC FALLS
+                        </p>
+
+                        <h3>
+                            Para quem encontrar esta mensagem,
+                        </h3>
+
+                        <p>
+                            Esta cidade guarda histórias que não
+                            aparecem nos mapas. Algumas pertencem
+                            ao passado. Outras ainda estão esperando
+                            para serem descobertas.
+                        </p>
+
+                        <p>
+                            Não confie apenas no que parece normal.
+                            Em Mystic Falls, os detalhes costumam
+                            esconder as respostas.
+                        </p>
+
+                        <p class="assinatura-carta">
+                            — Remetente desconhecido
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =========================================
+                 LUGARES
+            ========================================== -->
+
+            <section class="lugares-mystic">
+
+                <article class="titulo-secao">
+
+                    <p class="pequeno">
+                        <small>
+                            <b>EXPLORE A CIDADE</b>
+                        </small>
+                    </p>
+
+                    <h2>
+                        Lugares de Mystic Falls
+                    </h2>
+
+                    <p>
+                        Selecione um local para descobrir
+                        mais sobre ele.
+                    </p>
+
+                </article>
+
+
+                <section class="grade-lugares">
+
+                    <button
+                        class="lugar"
+                        type="button"
+                        data-titulo="Salvatore Boarding House"
+                        data-texto="A residência dos irmãos Salvatore e um dos lugares mais conhecidos da história."
+                    >
+                        <span>01</span>
+                        Salvatore Boarding House
+                    </button>
+
+
+                    <button
+                        class="lugar"
+                        type="button"
+                        data-titulo="Mystic Grill"
+                        data-texto="Um dos principais pontos de encontro dos moradores de Mystic Falls."
+                    >
+                        <span>02</span>
+                        Mystic Grill
+                    </button>
+
+
+                    <button
+                        class="lugar"
+                        type="button"
+                        data-titulo="Mystic Falls High School"
+                        data-texto="A escola frequentada por vários personagens no início da história."
+                    >
+                        <span>03</span>
+                        Mystic Falls High School
+                    </button>
+
+
+                    <button
+                        class="lugar"
+                        type="button"
+                        data-titulo="Lockwood Mansion"
+                        data-texto="A residência da família Lockwood, uma das famílias fundadoras da cidade."
+                    >
+                        <span>04</span>
+                        Lockwood Mansion
+                    </button>
+
+                </section>
+
+
+                <article id="informacaoLugar">
+
+                    <p class="pequeno">
+                        <small>
+                            <b>LOCAL SELECIONADO</b>
+                        </small>
+                    </p>
+
+                    <h3 id="tituloLugar">
+                        Escolha um local
+                    </h3>
+
+                    <p id="textoLugar">
+                        As informações aparecerão aqui.
+                    </p>
+
+                </article>
+
+            </section>
+
+
+            <!-- =========================================
+                 PROGRESSO
+            ========================================== -->
+
+            <section class="progresso-investigacao">
+
+                <article class="titulo-secao">
+
+                    <p class="pequeno">
+                        <small>
+                            <b>STATUS DO ARQUIVO</b>
+                        </small>
+                    </p>
+
+                    <h2>
+                        Progresso da investigação
+                    </h2>
+
+                </article>
+
+
+                <div class="linha-progresso">
+
+                    <div class="titulo-progresso">
+                        <span>PERSONAGENS</span>
+                        <strong>09</strong>
+                    </div>
+
+                    <div class="barra">
+                        <div class="barra-preenchida largura-100"></div>
                     </div>
 
                 </div>
 
 
-                <!-- BOLINHAS DA GALERIA -->
+                <div class="linha-progresso">
 
-                <div class="bolinhas-galeria">
+                    <div class="titulo-progresso">
+                        <span>ARQUIVOS</span>
+                        <strong>06</strong>
+                    </div>
 
-                    <button
-                        class="bolinha ativa"
-                        data-imagem="0"
-                        type="button"
-                        aria-label="Mostrar imagem 1"
-                    ></button>
-
-                    <button
-                        class="bolinha"
-                        data-imagem="1"
-                        type="button"
-                        aria-label="Mostrar imagem 2"
-                    ></button>
-
-                    <button
-                        class="bolinha"
-                        data-imagem="2"
-                        type="button"
-                        aria-label="Mostrar imagem 3"
-                    ></button>
-
-                    <button
-                        class="bolinha"
-                        data-imagem="3"
-                        type="button"
-                        aria-label="Mostrar imagem 4"
-                    ></button>
-
-                    <button
-                        class="bolinha"
-                        data-imagem="4"
-                        type="button"
-                        aria-label="Mostrar imagem 5"
-                    ></button>
+                    <div class="barra">
+                        <div class="barra-preenchida largura-70"></div>
+                    </div>
 
                 </div>
 
-            </article>
 
-        </section>
+                <div class="linha-progresso">
+
+                    <div class="titulo-progresso">
+                        <span>ARQUIVO RESTRITO</span>
+                        <strong>01</strong>
+                    </div>
+
+                    <div class="barra">
+                        <div class="barra-preenchida largura-35"></div>
+                    </div>
+
+                </div>
+
+            </section>
 
 
-        <!-- =====================================
-             DESTAQUES
-        ====================================== -->
+            <!-- =========================================
+                 NAVEGUE PELOS ARQUIVOS
+            ========================================== -->
 
-        <section id="destaques">
+            <section class="navegue-arquivos">
+
+                <article class="titulo-secao">
+
+                    <p class="pequeno">
+                        <small>
+                            <b>CONTINUE INVESTIGANDO</b>
+                        </small>
+                    </p>
+
+                    <h2>
+                        Navegue pelos arquivos
+                    </h2>
+
+                </article>
 
 
-            <!-- TÍTULO -->
+                <section class="grade-navegacao">
 
-            <article class="titulo-secao">
+                    <article>
+
+                        <p class="numero-navegacao">
+                            01
+                        </p>
+
+                        <h3>
+                            Personagens
+                        </h3>
+
+                        <p>
+                            Conheça os principais registros
+                            de Mystic Falls.
+                        </p>
+
+                        <a href="pages/personagens.html">
+                            Abrir →
+                        </a>
+
+                    </article>
+
+
+                    <article>
+
+                        <p class="numero-navegacao">
+                            02
+                        </p>
+
+                        <h3>
+                            Curiosidades
+                        </h3>
+
+                        <p>
+                            Descubra arquivos confidenciais
+                            e histórias escondidas.
+                        </p>
+
+                        <a href="pages/curiosidades.html">
+                            Explorar →
+                        </a>
+
+                    </article>
+
+
+                    <article>
+
+                        <p class="numero-navegacao">
+                            03
+                        </p>
+
+                        <h3>
+                            Guia
+                        </h3>
+
+                        <p>
+                            Leve os arquivos de Mystic Falls
+                            com você.
+                        </p>
+
+                        <a
+                            href="assets/arquivos/guia-mystic-falls.pdf"
+                            download
+                        >
+                            Baixar ↓
+                        </a>
+
+                    </article>
+
+                </section>
+
+            </section>
+
+
+            <!-- =========================================
+                 SEGREDO ESCONDIDO
+            ========================================== -->
+
+            <section class="segredo-escondido">
+
+                <p>
+                    Alguns segredos são mais difíceis
+                    de encontrar.
+                </p>
+
+                <button
+                    id="easterEgg"
+                    type="button"
+                    title="Segredo"
+                >
+                    ✦
+                </button>
+
+                <p id="mensagemSecreta">
+                    Você encontrou um arquivo escondido
+                    de Mystic Falls.
+                </p>
+
+            </section>
+
+
+            <!-- =========================================
+                 ACESSO AUTORIZADO
+            ========================================== -->
+
+            <section class="acesso-mystic">
 
                 <p class="pequeno">
                     <small>
-                        <b>THE VAMPIRE DIARIES</b>
+                        <b>VISITANTE Nº 001</b>
                     </small>
                 </p>
 
                 <h2>
-                    Uma história de mistério e escolhas
+                    Acesso registrado.
                 </h2>
 
                 <p>
-                    Uma cidade, vários segredos e personagens
-                    que mudaram completamente suas vidas ao
-                    descobrir o mundo sobrenatural.
+                    Você explorou Mystic Falls,
+                    mas nem todos os arquivos
+                    foram encontrados.
                 </p>
 
-            </article>
+
+                <div class="dados-acesso">
+
+                    <span>
+                        09 registros de personagens
+                    </span>
+
+                    <span>
+                        06 arquivos confidenciais
+                    </span>
+
+                    <span>
+                        01 arquivo restrito
+                    </span>
+
+                </div>
 
 
-            <!-- CARDS -->
+                <div class="botoes-acesso">
 
-            <section class="destaques">
+                    <a
+                        class="botao"
+                        href="pages/personagens.html"
+                    >
+                        Explorar personagens
+                    </a>
+
+                    <a
+                        class="botao"
+                        href="pages/curiosidades.html"
+                    >
+                        Abrir arquivos
+                    </a>
+
+                </div>
+
+            </section>
 
 
-                <!-- MYSTIC FALLS -->
+
+            <!-- EXPERIÊNCIA INTERATIVA DOS ARQUIVOS -->
+            <section class="arquivo-experiencia" id="experienciaArquivos">
+                <p class="pequeno"><small><b>REGISTRO DE SESSÃO</b></small></p>
+                <h2>Exploração dos arquivos</h2>
+                <p>ARQUIVO ABERTO POR: <strong class="nome-visitante-site">VISITANTE</strong></p>
+                <div class="progresso-geral"><div id="barraProgressoGeral"></div></div>
+                <p id="textoProgressoGeral">EXPLORAÇÃO DOS ARQUIVOS — 0%</p>
+                <div class="acoes-secretas">
+                    <button id="abrirDocumento1864" type="button">📂 Documento 1864</button>
+                    <button id="apagarVela" type="button">🕯️ Apagar a vela</button>
+                </div>
+                <article id="pasta1864" class="pasta-1864">
+                    <span>CLASSIFICAÇÃO: RESTRITO • MF-1864</span>
+                    <h3>Documento 1864</h3>
+                    <p>Data registrada: 1864. Os acontecimentos desse ano permanecem ligados à história dos irmãos Salvatore.</p>
+                    <p class="texto-invisivel">PISTA OCULTA: o segundo acesso pertence ao ano em que os registros modernos começaram.</p>
+                    <div class="foto-investigacao" id="fotoInvestigacao">
+                        <img id="foto1864" src="img/mystic-falls.png" alt="Fotografia antiga de Mystic Falls">
+                        <button id="chaveEscondida" class="chave-foto" type="button" title="Você encontrou alguma coisa..." aria-label="Chave escondida">🗝</button>
+                        <div class="lente-lupa" id="lenteLupa" aria-hidden="true"></div>
+                    </div>
+                    <p class="instrucao-lupa">🔎 Passe a lupa pela fotografia para investigar</p>
+                    <p class="simbolo-lupa">✦ 18 | 64 ✦</p>
+                    <p id="statusChave" class="status-chave">CHAVE: NÃO ENCONTRADA</p>
+                </article>
+            </section>
+
+            <section class="mapa-mystic">
+                <p class="pequeno"><small><b>MAPA DE MYSTIC FALLS</b></small></p>
+                <h2>Locais registrados</h2>
+                <div class="mapa-pontos">
+                    <button class="ponto-mapa" data-local="Mansão Salvatore" data-info="Residência ligada à história de Stefan e Damon Salvatore.">01 • Mansão Salvatore</button>
+                    <button class="ponto-mapa" data-local="Mystic Grill" data-info="Um dos principais pontos de encontro da cidade.">02 • Mystic Grill</button>
+                    <button class="ponto-mapa" data-local="Cemitério" data-info="Lugar ligado a memórias, famílias e acontecimentos do passado.">03 • Cemitério</button>
+                </div>
+                <article id="fichaMapa" class="ficha-mapa"><h3>Selecione um local</h3><p>Os detalhes aparecerão aqui.</p></article>
+            </section>
+
+            <section class="assinatura-visitante">
+                <p>Documento consultado por: <strong class="nome-visitante-site">VISITANTE</strong> • Sessão autorizada.</p>
+                <button id="encerrarSessao" type="button">Encerrar sessão</button>
+            </section>
+
+
+            <!-- =========================================
+                 DOWNLOAD
+            ========================================== -->
+
+            <section class="area-download">
+
+                <p class="pequeno">
+                    <small>
+                        <b>GUIA DE MYSTIC FALLS</b>
+                    </small>
+                </p>
+
+                <h2>
+                    Explore os segredos de Mystic Falls
+                </h2>
+
+                <p>
+                    Conheça personagens, curiosidades
+                    e alguns dos mistérios do universo
+                    de The Vampire Diaries.
+                </p>
 
                 <a
-                    class="link-destaque"
-                    href="pages/mysticfalls.html"
+                    class="botao"
+                    href="assets/arquivos/guia-mystic-falls.pdf"
+                    download
                 >
-
-                    <article class="destaque-card">
-
-                        <h3>
-                            Mystic Falls
-                        </h3>
-
-                        <p>
-                            Conheça a cidade onde segredos,
-                            famílias e acontecimentos sobrenaturais
-                            se encontram.
-                        </p>
-
-                        <span>
-                            Saiba mais →
-                        </span>
-
-                    </article>
-
-                </a>
-
-
-                <!-- SOBRENATURAL -->
-
-                <a
-                    class="link-destaque"
-                    href="pages/sobrenatural.html"
-                >
-
-                    <article class="destaque-card">
-
-                        <h3>
-                            O Sobrenatural
-                        </h3>
-
-                        <p>
-                            Vampiros, bruxas e outras criaturas
-                            fazem parte dos mistérios que cercam
-                            Mystic Falls.
-                        </p>
-
-                        <span>
-                            Saiba mais →
-                        </span>
-
-                    </article>
-
-                </a>
-
-
-                <!-- LAÇOS E ESCOLHAS -->
-
-                <a
-                    class="link-destaque"
-                    href="pages/lacos.html"
-                >
-
-                    <article class="destaque-card">
-
-                        <h3>
-                            Laços e Escolhas
-                        </h3>
-
-                        <p>
-                            Família, amizade e decisões difíceis
-                            transformam a vida dos personagens
-                            ao longo da história.
-                        </p>
-
-                        <span>
-                            Saiba mais →
-                        </span>
-
-                    </article>
-
+                    Baixar guia ↓
                 </a>
 
             </section>
 
-        </section>
 
-    </main>
+            <!-- =========================================
+                 VOLTAR AO TOPO
+            ========================================== -->
 
+            <section class="area-voltar-topo">
+                <a href="#topo" class="voltar-topo">
+                    ↑ Voltar ao topo
+                </a>
+            </section>
 
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
-
-    <footer>
-
-        <hr>
-
-        <p>
-            <small>
-                The Vampire Diaries • by yasmin
-            </small>
-        </p>
-
-    </footer>
+        </main>
 
 
-    <!-- =====================================
-         JAVASCRIPT DA GALERIA
-    ====================================== -->
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <footer>
+
+            <hr>
+
+            <p>
+                <small>
+                    The Vampire Diaries • by yasmin
+                </small>
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script>
 
-        /* LISTA DAS 5 IMAGENS */
+        /* TELA DE ENTRADA */
+
+        const telaEntrada = document.getElementById("telaEntrada");
+        const entradaCaixa = document.querySelector(".entrada-caixa");
+        const nomeVisitante = document.getElementById("nomeVisitante");
+        const abrirRegistro = document.getElementById("abrirRegistro");
+        const conteudoRegistro = document.getElementById("conteudoRegistro");
+        const codigoAcesso = document.getElementById("codigoAcesso");
+        const verificarCodigo = document.getElementById("verificarCodigo");
+        const mensagemAcesso = document.getElementById("mensagemAcesso");
+        const acessoConfirmado = document.getElementById("acessoConfirmado");
+        const nomeConfirmado = document.getElementById("nomeConfirmado");
+        const entrarArquivos = document.getElementById("entrarArquivos");
+
+        const senhaCorreta = "1864";
+
+        abrirRegistro.addEventListener("click", function () {
+            conteudoRegistro.classList.toggle("mostrar");
+            const textoBotao = abrirRegistro.querySelector(".documento-abrir");
+            textoBotao.textContent = conteudoRegistro.classList.contains("mostrar")
+                ? "FECHAR REGISTRO"
+                : "ABRIR REGISTRO";
+        });
+
+        codigoAcesso.addEventListener("input", function () {
+            codigoAcesso.value = codigoAcesso.value.replace(/\D/g, "").slice(0, 4);
+        });
+
+        function conferirAcesso() {
+            const nome = nomeVisitante.value.trim();
+            const codigo = codigoAcesso.value.trim();
+
+            if (nome === "") {
+                mensagemAcesso.textContent = "✕ INFORME SUA IDENTIDADE";
+                mensagemAcesso.className = "mensagem-acesso erro";
+                nomeVisitante.focus();
+                return;
+            }
+
+            if (codigo !== senhaCorreta) {
+                mensagemAcesso.textContent = "✕ CÓDIGO INVÁLIDO — ACESSO NEGADO";
+                mensagemAcesso.className = "mensagem-acesso erro";
+                entradaCaixa.classList.remove("erro-acesso");
+                void entradaCaixa.offsetWidth;
+                entradaCaixa.classList.add("erro-acesso");
+                codigoAcesso.value = "";
+                codigoAcesso.focus();
+                return;
+            }
+
+            mensagemAcesso.textContent = "✓ CÓDIGO RECONHECIDO";
+            mensagemAcesso.className = "mensagem-acesso sucesso";
+            nomeConfirmado.textContent = nome.toUpperCase();
+            acessoConfirmado.classList.add("mostrar");
+            verificarCodigo.style.display = "none";
+            codigoAcesso.disabled = true;
+            nomeVisitante.disabled = true;
+        }
+
+        verificarCodigo.addEventListener("click", conferirAcesso);
+
+        codigoAcesso.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                conferirAcesso();
+            }
+        });
+
+        entrarArquivos.addEventListener("click", function () {
+            localStorage.setItem("mysticNome", nomeVisitante.value.trim() || "VISITANTE");
+            localStorage.setItem("mysticSessao", "ativa");
+            localStorage.setItem("mysticHome", "1");
+            telaEntrada.classList.add("entrada-fechada");
+            atualizarExperiencia();
+        });
+
+
+        /* GALERIA */
 
         const imagensGaleria = [
 
-            "img/mystic-falls.png",
+            {
+                imagem: "img/mystic-falls.png",
+                titulo: "Mystic Falls",
+                texto: "Uma cidade onde nada é exatamente o que parece."
+            },
 
-            "img/mystic-falls1.png",
+            {
+                imagem: "img/mystic-falls1.png",
+                titulo: "Segredos antigos",
+                texto: "O passado continua presente nas histórias da cidade."
+            },
 
-            "img/mystic-falls2.png",
+            {
+                imagem: "img/mystic-falls2.png",
+                titulo: "Mistérios",
+                texto: "Nem todos os acontecimentos possuem uma explicação comum."
+            },
 
-            "img/mystic-falls3.png",
+            {
+                imagem: "img/mystic-falls3.png",
+                titulo: "O sobrenatural",
+                texto: "Vampiros, bruxas e outras forças fazem parte dessa história."
+            },
 
-            "img/mystic-falls4.png"
+            {
+                imagem: "img/mystic-falls4.png",
+                titulo: "Arquivos",
+                texto: "Cada registro revela uma nova parte de Mystic Falls."
+            }
 
         ];
 
 
-        /* COMEÇA NA PRIMEIRA IMAGEM */
-
         let imagemAtual = 0;
-
-
-        /* ELEMENTOS DA GALERIA */
 
         const imagemPrincipal =
             document.getElementById("imagemPrincipal");
 
-        const numeroImagem =
-            document.getElementById("numeroImagem");
+        const numeroGaleria =
+            document.getElementById("numeroGaleria");
+
+        const tituloGaleria =
+            document.getElementById("tituloGaleria");
+
+        const textoGaleria =
+            document.getElementById("textoGaleria");
 
         const bolinhas =
             document.querySelectorAll(".bolinha");
 
 
-        /* =====================================
-           FUNÇÃO PARA MOSTRAR A IMAGEM
-        ====================================== */
-
         function mostrarImagem(numero) {
 
             imagemAtual = numero;
 
-
-            /* TROCA A IMAGEM */
-
             imagemPrincipal.src =
-                imagensGaleria[imagemAtual];
+                imagensGaleria[numero].imagem;
+
+            tituloGaleria.textContent =
+                imagensGaleria[numero].titulo;
+
+            textoGaleria.textContent =
+                imagensGaleria[numero].texto;
+
+            numeroGaleria.textContent =
+                "0" + (numero + 1) + " / 05";
 
 
-            /* ATUALIZA O NÚMERO */
+            bolinhas.forEach(function (bolinha) {
 
-            numeroImagem.textContent =
-                imagemAtual + 1;
+                bolinha.classList.remove("ativa");
 
-
-            /* REMOVE A BOLINHA ATIVA */
-
-            bolinhas.forEach(
-                function(bolinha) {
-
-                    bolinha.classList.remove("ativa");
-
-                }
-            );
+            });
 
 
-            /* ATIVA A BOLINHA DA FOTO ATUAL */
-
-            bolinhas[imagemAtual]
-                .classList.add("ativa");
+            bolinhas[numero].classList.add("ativa");
 
         }
 
 
-        /* =====================================
-           CLICAR NA IMAGEM
-        ====================================== */
+        imagemPrincipal.addEventListener("click", function () {
 
-        imagemPrincipal.addEventListener(
-            "click",
-            function() {
+            imagemAtual++;
 
-                imagemAtual++;
+            if (imagemAtual >= imagensGaleria.length) {
+                imagemAtual = 0;
+            }
 
+            mostrarImagem(imagemAtual);
 
-                /* DEPOIS DA FOTO 5,
-                   VOLTA PARA A FOTO 1 */
-
-                if (
-                    imagemAtual >=
-                    imagensGaleria.length
-                ) {
-
-                    imagemAtual = 0;
-
-                }
+        });
 
 
-                mostrarImagem(imagemAtual);
+        bolinhas.forEach(function (bolinha) {
+
+            bolinha.addEventListener("click", function () {
+
+                const numero =
+                    Number(bolinha.dataset.imagem);
+
+                mostrarImagem(numero);
+
+            });
+
+        });
+
+
+        /* CARTA */
+
+        const abrirCarta =
+            document.getElementById("abrirCarta");
+
+        const conteudoCarta =
+            document.getElementById("conteudoCarta");
+
+
+        abrirCarta.addEventListener("click", function () {
+
+            conteudoCarta.classList.toggle("mostrar");
+
+            if (conteudoCarta.classList.contains("mostrar")) {
+
+                abrirCarta.textContent =
+                    "Fechar carta";
+
+            } else {
+
+                abrirCarta.textContent =
+                    "Abrir carta";
 
             }
-        );
+
+        });
 
 
-        /* =====================================
-           CLICAR NAS BOLINHAS
-        ====================================== */
+        /* LUGARES */
 
-        bolinhas.forEach(
-            function(bolinha) {
+        const lugares =
+            document.querySelectorAll(".lugar");
 
-                bolinha.addEventListener(
-                    "click",
-                    function() {
+        const tituloLugar =
+            document.getElementById("tituloLugar");
 
-                        const numero =
-                            Number(
-                                bolinha.dataset.imagem
-                            );
+        const textoLugar =
+            document.getElementById("textoLugar");
 
-                        mostrarImagem(numero);
 
-                    }
-                );
+        lugares.forEach(function (lugar) {
 
-            }
-        );
+            lugar.addEventListener("click", function () {
+
+                lugares.forEach(function (item) {
+
+                    item.classList.remove("selecionado");
+
+                });
+
+
+                lugar.classList.add("selecionado");
+
+                tituloLugar.textContent =
+                    lugar.dataset.titulo;
+
+                textoLugar.textContent =
+                    lugar.dataset.texto;
+
+            });
+
+        });
+
+
+        /* SEGREDO ESCONDIDO */
+
+        const easterEgg =
+            document.getElementById("easterEgg");
+
+        const mensagemSecreta =
+            document.getElementById("mensagemSecreta");
+
+
+        easterEgg.addEventListener("click", function () {
+
+            mensagemSecreta.classList.toggle("mostrar");
+
+        });
+
+
+
+        /* EXPERIÊNCIA MYSTIC FALLS */
+        function nomeSalvo() { return localStorage.getItem("mysticNome") || "VISITANTE"; }
+        function atualizarNomes() {
+            document.querySelectorAll(".nome-visitante-site").forEach(el => el.textContent = nomeSalvo().toUpperCase());
+        }
+        function atualizarRelogio() {
+            const agora = new Date();
+            const h = String(agora.getHours()).padStart(2,"0");
+            const m = String(agora.getMinutes()).padStart(2,"0");
+            const el = document.getElementById("relogioMystic");
+            if (el) el.textContent = `MYSTIC FALLS • ${h}:${m}`;
+        }
+        function atualizarExperiencia() {
+            atualizarNomes();
+            const itens = ["mysticHome","mysticPersonagens","mysticDocumento1864","mysticChave","mysticCarta","mysticCuriosidades","mysticArquivo7"];
+            const feitos = itens.filter(k => localStorage.getItem(k) === "1").length;
+            const pct = Math.round((feitos / itens.length) * 100);
+            const barra = document.getElementById("barraProgressoGeral");
+            const texto = document.getElementById("textoProgressoGeral");
+            if (barra) barra.style.width = pct + "%";
+            if (texto) texto.textContent = `EXPLORAÇÃO DOS ARQUIVOS — ${pct}%`;
+            const status = document.getElementById("statusChave");
+            if (status && localStorage.getItem("mysticChave") === "1") status.textContent = "CHAVE: ENCONTRADA ✓";
+        }
+        atualizarRelogio(); setInterval(atualizarRelogio, 1000); atualizarExperiencia();
+        if (localStorage.getItem("mysticSessao") === "ativa") {
+            telaEntrada.classList.add("entrada-fechada");
+            const aviso = document.getElementById("avisoSessao"); aviso.classList.add("mostrar"); setTimeout(()=>aviso.classList.remove("mostrar"),2600);
+        }
+        setTimeout(()=>{ const o=document.getElementById("observado"); o.classList.add("mostrar"); setTimeout(()=>o.classList.remove("mostrar"),3000); },9000);
+        document.addEventListener("mousemove", e=>{ const m=document.getElementById("marcaCursor"); m.style.left=e.clientX+"px"; m.style.top=e.clientY+"px"; });
+        document.querySelectorAll(".segredo-escondido,.arquivo-experiencia,.ano-secreto").forEach(el=>{ el.addEventListener("mouseenter",()=>document.body.classList.add("cursor-secreto")); el.addEventListener("mouseleave",()=>document.body.classList.remove("cursor-secreto")); });
+
+        const ano1864=document.getElementById("ano1864"), pasta1864=document.getElementById("pasta1864");
+        function abrir1864(){ pasta1864.classList.toggle("mostrar"); localStorage.setItem("mysticDocumento1864","1"); atualizarExperiencia(); }
+        ano1864.addEventListener("click", abrir1864); document.getElementById("abrirDocumento1864").addEventListener("click", abrir1864);
+        const fotoInvestigacao = document.getElementById("fotoInvestigacao");
+        const foto1864 = document.getElementById("foto1864");
+        const lenteLupa = document.getElementById("lenteLupa");
+        const chaveEscondida = document.getElementById("chaveEscondida");
+        const statusChave = document.getElementById("statusChave");
+        const simboloLupa = document.querySelector(".simbolo-lupa");
+
+        if (localStorage.getItem("mysticChave") === "1") {
+            chaveEscondida.classList.add("encontrada");
+            statusChave.classList.add("encontrada");
+            statusChave.textContent = "CHAVE: ENCONTRADA ✓";
+        }
+
+        if (fotoInvestigacao && foto1864 && lenteLupa) {
+            fotoInvestigacao.addEventListener("mouseenter", () => {
+                lenteLupa.classList.add("ativa");
+                if (simboloLupa) simboloLupa.classList.add("revelado");
+            });
+            fotoInvestigacao.addEventListener("mousemove", (event) => {
+                const area = fotoInvestigacao.getBoundingClientRect();
+                const x = event.clientX - area.left;
+                const y = event.clientY - area.top;
+                const zoom = 2.3;
+                lenteLupa.style.left = x + "px";
+                lenteLupa.style.top = y + "px";
+                lenteLupa.style.backgroundImage = `url("${foto1864.src}")`;
+                lenteLupa.style.backgroundSize = `${area.width * zoom}px ${area.height * zoom}px`;
+                lenteLupa.style.backgroundPosition = `${-(x * zoom) + 80}px ${-(y * zoom) + 80}px`;
+                const chaveArea = chaveEscondida.getBoundingClientRect();
+                const chaveX = chaveArea.left - area.left + chaveArea.width / 2;
+                const chaveY = chaveArea.top - area.top + chaveArea.height / 2;
+                const distancia = Math.hypot(x - chaveX, y - chaveY);
+                if (distancia < 90 && localStorage.getItem("mysticChave") !== "1") chaveEscondida.classList.add("detectada");
+                else if (localStorage.getItem("mysticChave") !== "1") chaveEscondida.classList.remove("detectada");
+            });
+            fotoInvestigacao.addEventListener("mouseleave", () => {
+                lenteLupa.classList.remove("ativa");
+                if (localStorage.getItem("mysticChave") !== "1") chaveEscondida.classList.remove("detectada");
+            });
+        }
+
+        chaveEscondida.addEventListener("click", function (event) {
+            event.stopPropagation();
+            localStorage.setItem("mysticChave", "1");
+            this.classList.remove("detectada");
+            this.classList.add("encontrada");
+            statusChave.classList.add("encontrada");
+            statusChave.textContent = "CHAVE: ENCONTRADA ✓";
+            atualizarExperiencia();
+        });
+        document.getElementById("apagarVela").addEventListener("click",function(){ document.body.classList.toggle("luz-apagada"); this.textContent=document.body.classList.contains("luz-apagada")?"🕯️ Acender a vela":"🕯️ Apagar a vela"; });
+        document.querySelectorAll(".ponto-mapa").forEach(btn=>btn.addEventListener("click",()=>{ const f=document.getElementById("fichaMapa"); f.querySelector("h3").textContent=btn.dataset.local; f.querySelector("p").textContent=btn.dataset.info; f.classList.add("selecionado"); }));
+        abrirCarta.addEventListener("click",()=>{ localStorage.setItem("mysticCarta","1"); atualizarExperiencia(); abrirCarta.classList.add("lacre-rompido"); });
+        document.getElementById("encerrarSessao").addEventListener("click",()=>{ ["mysticSessao","mysticHome","mysticPersonagens","mysticDocumento1864","mysticChave","mysticCarta","mysticCuriosidades","mysticArquivo7","mysticArquivosAbertos"].forEach(k=>localStorage.removeItem(k)); document.body.classList.add("sessao-encerrada"); setTimeout(()=>location.reload(),1200); });
 
     </script>
 
