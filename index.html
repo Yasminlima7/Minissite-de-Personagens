@@ -112,6 +112,11 @@
                     Curiosidades
                 </a>
 
+                <button id="encerrarSessao" class="ponto-mapa" type="button">
+                    Encerrar sessão
+                </button>
+
+            <button id="modoInvestigar" class="btn-investigar" type="button">🔎 INVESTIGAR</button>
             </nav>
 
         </header>
@@ -139,7 +144,7 @@
                     </h2>
 
                     <p>
-                        Mystic Falls parece apenas uma pequena cidade,
+                        <span id="fraseMudou" class="frase-mudou">Mystic Falls parece apenas uma pequena cidade,</span>
                         mas por trás de sua aparência tranquila existem
                         vampiros, bruxas, famílias antigas e segredos
                         escondidos há gerações.
@@ -384,7 +389,7 @@
                  DOSSIÊ KATHERINE
             ========================================== -->
 
-            <section class="dossie-destaque">
+            <section class="dossie-destaque" id="dossieKatherine">
 
                 <p class="marca-classified">
                     CLASSIFIED
@@ -457,6 +462,13 @@
 
             </section>
 
+
+            <section id="gavetaKatherine" class="gaveta-katherine" aria-live="polite">
+                <p class="pequeno"><small><b>ARQUIVO K.P. — ACESSO RESTRITO</b></small></p>
+                <h3>Gaveta oculta desbloqueada</h3>
+                <p>Um registro adicional de Katherine Pierce foi localizado. O arquivo estava escondido atrás do dossiê principal.</p>
+                <span>CLASSIFICAÇÃO: CONFIDENCIAL • K.P.-004</span>
+            </section>
 
             <!-- =========================================
                  LINHA DO TEMPO
@@ -580,9 +592,7 @@
                     </p>
 
 
-                    <button id="abrirCarta" type="button">
-                        Abrir carta
-                    </button>
+                    <div class="envelope-antigo" id="envelopeCarta"><span class="lacre-carta">MF</span><button id="abrirCarta" type="button">ROMPER LACRE</button></div>
 
 
                     <div id="conteudoCarta">
@@ -1004,7 +1014,6 @@
 
             <section class="assinatura-visitante">
                 <p>Documento consultado por: <strong class="nome-visitante-site">VISITANTE</strong> • Sessão autorizada.</p>
-                <button id="encerrarSessao" type="button">Encerrar sessão</button>
             </section>
 
 
@@ -1041,17 +1050,50 @@
             </section>
 
 
-            <!-- =========================================
-                 VOLTAR AO TOPO
-            ========================================== -->
+        <!-- NOVOS RECURSOS DE INVESTIGAÇÃO -->
+        <section class="painel-investigador" id="painelInvestigador">
+            <p class="pequeno"><small><b>REGISTRO AUTOMÁTICO</b></small></p>
+            <h2>Relatório do investigador</h2>
+            <div class="relatorio-grid">
+                <p>Investigador: <strong class="nome-visitante-site">VISITANTE</strong></p>
+                <p>Chave: <strong id="relatorioChave">não encontrada</strong></p>
+                <p>Arquivo 007: <strong id="relatorio007">bloqueado</strong></p>
+                <p>Arquivo K.P.: <strong id="relatorioKP">não descoberto</strong></p>
+                <p>Nível de acesso: <strong id="nivelAcesso">NÍVEL I</strong></p>
+            </div>
+        </section>
 
-            <section class="area-voltar-topo">
-                <a href="#topo" class="voltar-topo">
-                    ↑ Voltar ao topo
-                </a>
-            </section>
+        <section class="transmissao-interceptada">
+            <p class="pequeno"><small><b>CANAL DESCONHECIDO • MF-1864</b></small></p>
+            <h2>Transmissão interceptada</h2>
+            <button id="reproduzirTransmissao" class="btn-transmissao" type="button">▶ REPRODUZIR TRANSMISSÃO</button>
+            <div id="terminalTransmissao" class="terminal-transmissao" aria-live="polite"></div>
+        </section>
 
-        </main>
+        <section class="foto-mutante-area">
+            <p class="pequeno"><small><b>EVIDÊNCIA FOTOGRÁFICA</b></small></p>
+            <h2>A fotografia não permanece igual</h2>
+            <div class="foto-mutante" id="fotoMutante">
+                <img src="img/mystic-falls.png" alt="Registro fotográfico de Mystic Falls">
+                <div class="revelacao-foto"><span>✦</span><strong>1864</strong><small>O PASSADO AINDA ESTÁ AQUI</small></div>
+            </div>
+            <p class="instrucao-foto">Mantenha o cursor sobre a fotografia por alguns segundos.</p>
+        </section>
+
+        <section id="finalSecreto" class="final-secreto">
+  <p class="pequeno"><small><b>STATUS DO ARQUIVO</b></small></p>
+  <h2>🏆 INVESTIGAÇÃO CONCLUÍDA</h2>
+  <p>Todos os arquivos disponíveis foram recuperados.</p>
+  <button id="abrirDocumentoFinal" type="button">Abrir último documento</button>
+  <article id="documentoFinal" class="documento-final"><span>ARQUIVO FINAL • MF-∞</span><h3>Registro concluído</h3><p>Mystic Falls ainda guarda segredos, mas esta investigação chegou a 100%.</p></article>
+</section>
+<div id="eventoSurpresa" class="evento-surpresa">⚠ ATIVIDADE DETECTADA NOS ARQUIVOS</div>
+
+        <!-- VOLTAR AO TOPO -->
+        <section class="area-voltar-topo">
+            <a href="#topo" class="voltar-topo">↑ Voltar ao topo</a>
+        </section>
+</main>
 
 
         <!-- =========================================
@@ -1438,8 +1480,91 @@
         abrirCarta.addEventListener("click",()=>{ localStorage.setItem("mysticCarta","1"); atualizarExperiencia(); abrirCarta.classList.add("lacre-rompido"); });
         document.getElementById("encerrarSessao").addEventListener("click",()=>{ ["mysticSessao","mysticHome","mysticPersonagens","mysticDocumento1864","mysticChave","mysticCarta","mysticCuriosidades","mysticArquivo7","mysticArquivosAbertos"].forEach(k=>localStorage.removeItem(k)); document.body.classList.add("sessao-encerrada"); setTimeout(()=>location.reload(),1200); });
 
-    </script>
+    
+// ===== NOVAS INTERAÇÕES =====
+(function(){
+ const investigar=document.getElementById('modoInvestigar');
+ if(investigar){ investigar.addEventListener('click',()=>{ document.body.classList.toggle('modo-investigacao'); investigar.classList.toggle('ativo'); investigar.textContent=document.body.classList.contains('modo-investigacao')?'✦ INVESTIGANDO':'🔎 INVESTIGAR'; }); }
+ const vela=document.getElementById('apagarVela');
+ if(vela){ vela.addEventListener('click',()=>{ document.body.classList.toggle('vela-apagada'); vela.textContent=document.body.classList.contains('vela-apagada')?'🕯️ Acender a vela':'🕯️ Apagar a vela'; }); }
+ const dossier=document.getElementById('dossieKatherine'), gaveta=document.getElementById('gavetaKatherine');
+ if(dossier&&gaveta){
+   dossier.addEventListener('click',e=>{
+     // Um único clique em QUALQUER parte do dossiê, inclusive em "Abrir dossiê", descobre o K.P.
+     gaveta.classList.add('mostrar');
+     localStorage.setItem('mysticKatherineKP','1');
 
+     const relatorioKP = document.getElementById('relatorioKP');
+     if(relatorioKP) relatorioKP.textContent = 'descoberto ✓';
+
+     if(typeof atualizarExperiencia==='function') atualizarExperiencia();
+   });
+   if(localStorage.getItem('mysticKatherineKP')==='1') gaveta.classList.add('mostrar');
+ }
+ const carta=document.getElementById('abrirCarta'), env=document.getElementById('envelopeCarta'); if(carta&&env){carta.addEventListener('click',()=>{env.classList.add('rompido'); carta.textContent='LACRE ROMPIDO';});}
+ const surpresa=document.getElementById('eventoSurpresa'); if(surpresa) setTimeout(()=>{surpresa.classList.add('mostrar'); setTimeout(()=>surpresa.classList.remove('mostrar'),4500);},120000);
+ const feitos=['mysticHome','mysticPersonagens','mysticDocumento1864','mysticChave','mysticCarta','mysticCuriosidades','mysticArquivo7'].filter(k=>localStorage.getItem(k)==='1').length;
+ if(feitos>=3) document.body.classList.add('segredos-alteraram');
+ const final=document.getElementById('finalSecreto'); if(final&&feitos===7) final.classList.add('mostrar');
+ const abrirFinal=document.getElementById('abrirDocumentoFinal'), docFinal=document.getElementById('documentoFinal'); if(abrirFinal&&docFinal) abrirFinal.addEventListener('click',()=>docFinal.classList.toggle('mostrar'));
+})();
+
+
+// ===== RELATÓRIO, NÍVEIS, TRANSMISSÃO, FOTO E FINAL 100% =====
+(function(){
+ const get=k=>localStorage.getItem(k)==='1';
+ const ch=document.getElementById('relatorioChave'), a7=document.getElementById('relatorio007'), kp=document.getElementById('relatorioKP'), nivel=document.getElementById('nivelAcesso');
+ const marcos=['mysticHome','mysticPersonagens','mysticDocumento1864','mysticChave','mysticCarta','mysticCuriosidades','mysticArquivo7','mysticKatherineKP','mysticPersonagemSecreto'];
+ function estado(){
+   const completos=marcos.filter(get).length;
+   if(ch) ch.textContent=get('mysticChave')?'encontrada ✓':'não encontrada';
+   if(a7) a7.textContent=get('mysticArquivo7')?'aberto ✓':'bloqueado';
+   if(kp) kp.textContent=get('mysticKatherineKP')?'descoberto ✓':'não descoberto';
+   let n='NÍVEL I'; if(get('mysticChave')) n='NÍVEL II'; if(get('mysticArquivo7')) n='NÍVEL III'; if(completos===marcos.length) n='ACESSO TOTAL';
+   if(nivel) nivel.textContent=n;
+   return completos===marcos.length;
+ }
+ window.atualizarRelatorioInvestigador = estado;
+ estado();
+ window.addEventListener('storage',estado);
+ const bt=document.getElementById('reproduzirTransmissao'), term=document.getElementById('terminalTransmissao');
+ if(bt&&term){ bt.addEventListener('click',()=>{
+   bt.disabled=true; term.textContent=''; const linhas=['TRANSMISSÃO RECUPERADA...','ORIGEM: DESCONHECIDA','DATA: 1864','SINAL: INSTÁVEL','...NÃO CONFIE EM TODOS OS REGISTROS.'];
+   let li=0, ci=0; function digitar(){ if(li>=linhas.length){bt.disabled=false;return;} if(ci<linhas[li].length){term.textContent+=linhas[li][ci++];setTimeout(digitar,38);}else{term.textContent+='\n';li++;ci=0;setTimeout(digitar,420);} } digitar();
+ });}
+ const fm=document.getElementById('fotoMutante'); if(fm){let t;fm.addEventListener('mouseenter',()=>{t=setTimeout(()=>fm.classList.add('revelada'),1800)});fm.addEventListener('mouseleave',()=>{clearTimeout(t);fm.classList.remove('revelada')});}
+ const tela=document.getElementById('telaConclusao'), abrir=document.getElementById('abrirUltimoRegistro'), ultimo=document.getElementById('ultimoRegistro'), fechar=document.getElementById('fecharConclusao');
+ if(tela && estado() && sessionStorage.getItem('mysticFinalVisto')!=='1'){setTimeout(()=>{tela.classList.add('mostrar');tela.setAttribute('aria-hidden','false');sessionStorage.setItem('mysticFinalVisto','1')},1000)}
+ if(abrir&&ultimo) abrir.addEventListener('click',()=>ultimo.classList.add('mostrar'));
+ if(fechar&&tela) fechar.addEventListener('click',()=>{tela.classList.remove('mostrar');tela.setAttribute('aria-hidden','true')});
+})();
+</script>
+
+
+<div id="telaConclusao" class="tela-conclusao" aria-hidden="true">
+  <div class="conclusao-conteudo">
+    <p>MYSTIC FALLS ARCHIVES</p>
+    <h2>INVESTIGAÇÃO CONCLUÍDA</h2>
+    <strong>ACESSO TOTAL CONCEDIDO</strong>
+    <button id="abrirUltimoRegistro" type="button">ABRIR ÚLTIMO REGISTRO</button>
+    <article id="ultimoRegistro" class="ultimo-registro">
+      <span>ARQUIVO FINAL • ACESSO TOTAL</span>
+      <h3>Registro do investigador</h3>
+      <p>Todos os arquivos disponíveis foram recuperados. O caso foi oficialmente encerrado.</p>
+      <button id="fecharConclusao" type="button">VOLTAR AOS ARQUIVOS</button>
+    </article>
+  </div>
+</div>
+<script>
+(function(){
+ const h=document.querySelector('header'); if(!h||document.getElementById('nivelTopo')) return;
+ const b=document.createElement('span'); b.id='nivelTopo'; b.className='nivel-topo';
+ const keys=['mysticHome','mysticPersonagens','mysticDocumento1864','mysticChave','mysticCarta','mysticCuriosidades','mysticArquivo7','mysticKatherineKP','mysticPersonagemSecreto'];
+ const n=keys.filter(k=>localStorage.getItem(k)==='1').length;
+ b.textContent=n===keys.length?'ACESSO TOTAL':localStorage.getItem('mysticArquivo7')==='1'?'NÍVEL III':localStorage.getItem('mysticChave')==='1'?'NÍVEL II':'NÍVEL I';
+ h.appendChild(b);
+})();
+</script>
 </body>
 
 </html>

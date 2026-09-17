@@ -51,7 +51,8 @@
                 Curiosidades
             </a>
 
-        </nav>
+        <button id="modoInvestigar" class="btn-investigar" type="button">🔎 INVESTIGAR</button>
+            </nav>
 
     </header>
 
@@ -793,7 +794,7 @@
                 class="card card-registro"
                 data-nome="qetsiyah tessa"
                 data-tipo="bruxa"
-            >
+             id="arquivoPersonagemBloqueado"><div id="bloqueioPersonagem" class="bloqueio-personagem"><span>🔒</span><strong>REGISTRO BLOQUEADO</strong><p>CHAVE DE ACESSO NECESSÁRIA</p><p>Encontre a chave escondida no Documento 1864.</p><button id="desbloquearPersonagem" type="button">VERIFICAR CHAVE</button></div><div id="acessoConcedido" class="acesso-concedido">ACESSO CONCEDIDO</div>
 
                 <div class="registro-topo">
 
@@ -992,7 +993,7 @@
 
         </section>
 
-    </main>
+    <div id="eventoSurpresa" class="evento-surpresa">⚠ ATIVIDADE DETECTADA NOS ARQUIVOS</div></main>
 
 
     <!-- =========================================
@@ -1489,8 +1490,21 @@
         localStorage.setItem("mysticPersonagens", "1");
         document.querySelectorAll(".nome-visitante-site").forEach(el => el.textContent=(localStorage.getItem("mysticNome")||"VISITANTE").toUpperCase());
         function atualizarRelogio(){const a=new Date(),h=String(a.getHours()).padStart(2,"0"),m=String(a.getMinutes()).padStart(2,"0"),e=document.getElementById("relogioMystic");if(e)e.textContent=`MYSTIC FALLS • ${h}:${m}`;} atualizarRelogio();setInterval(atualizarRelogio,1000);
-    </script>
+    
+// ===== ARQUIVO BLOQUEADO + MODO INVESTIGAÇÃO =====
+(function(){const inv=document.getElementById('modoInvestigar');if(inv)inv.addEventListener('click',()=>{document.body.classList.toggle('modo-investigacao');inv.classList.toggle('ativo');});const card=document.getElementById('arquivoPersonagemBloqueado'),lock=document.getElementById('bloqueioPersonagem'),btn=document.getElementById('desbloquearPersonagem'),ok=document.getElementById('acessoConcedido');function aberto(){return localStorage.getItem('mysticPersonagemSecretoV2')==='1'}function render(){if(card)card.classList.toggle('arquivo-desbloqueado',aberto())}if(btn)btn.addEventListener('click',()=>{if(localStorage.getItem('mysticChave')!=='1'){btn.textContent='CHAVE NÃO ENCONTRADA';return;}localStorage.setItem('mysticPersonagemSecretoV2','1');render();ok.classList.add('mostrar');setTimeout(()=>ok.classList.remove('mostrar'),1800);});render();const e=document.getElementById('eventoSurpresa');if(e)setTimeout(()=>{e.classList.add('mostrar');setTimeout(()=>e.classList.remove('mostrar'),4500)},120000);})();
+</script>
 
+<script>
+(function(){
+ const h=document.querySelector('header'); if(!h||document.getElementById('nivelTopo')) return;
+ const b=document.createElement('span'); b.id='nivelTopo'; b.className='nivel-topo';
+ const keys=['mysticHome','mysticPersonagens','mysticDocumento1864','mysticChave','mysticCarta','mysticCuriosidades','mysticArquivo7','mysticKatherineKP','mysticPersonagemSecretoV2'];
+ const n=keys.filter(k=>localStorage.getItem(k)==='1').length;
+ b.textContent=n===keys.length?'ACESSO TOTAL':localStorage.getItem('mysticArquivo7')==='1'?'NÍVEL III':localStorage.getItem('mysticChave')==='1'?'NÍVEL II':'NÍVEL I';
+ h.appendChild(b);
+})();
+</script>
 </body>
 
 </html>

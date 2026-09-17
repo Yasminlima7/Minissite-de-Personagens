@@ -18,7 +18,8 @@
             <a href="../index.html">Início</a>
             <a href="personagens.html">Personagens</a>
             <a href="curiosidades.html">Curiosidades</a>
-        </nav>
+        <button id="modoInvestigar" class="btn-investigar" type="button">🔎 INVESTIGAR</button>
+            </nav>
     </header>
 
     <main>
@@ -144,7 +145,7 @@
             <p id="mensagemCodigo" class="mensagem-codigo"></p>
             <article id="segredoFinal" class="arquivo-sete">
                 <div class="carimbo-desclassificado">DESCLASSIFICADO</div>
-                <span>CLASSIFIED • REGISTRO 007</span>
+                <span>CLASSIFIED • 🔒 ARQUIVO 007 — CHAVE NECESSÁRIA</span>
                 <h3>Arquivo secreto de Mystic Falls</h3>
                 <p>O registro final foi recuperado. Nem todos os segredos permanecem enterrados para sempre.</p>
                 <p>CONSULTADO POR: <strong class="nome-visitante-site">VISITANTE</strong></p>
@@ -158,7 +159,7 @@
         </section>
 
         <a class="voltar-topo" href="#topo">↑ Voltar ao topo</a>
-    </main>
+    <div id="eventoSurpresa" class="evento-surpresa">⚠ ATIVIDADE DETECTADA NOS ARQUIVOS</div></main>
 
     <footer>
         <hr>
@@ -172,8 +173,20 @@
         function atualizarRelogio(){const a=new Date(),h=String(a.getHours()).padStart(2,"0"),m=String(a.getMinutes()).padStart(2,"0"),e=document.getElementById("relogioMystic");if(e)e.textContent=`MYSTIC FALLS • ${h}:${m}`;} atualizarRelogio();setInterval(atualizarRelogio,1000);
         function atualizar(){arquivosAbertos.textContent=abertos.length;barraArquivos.style.width=((abertos.length/6)*100)+"%";statusArquivos.textContent=abertos.length<6?(6-abertos.length)+" registro(s) ainda protegido(s).":"Todos os seis registros foram recuperados. Acesso Nível II detectado.";if(abertos.length===6){arquivoFinal.classList.add("liberado");localStorage.setItem("mysticCuriosidades","1");}}
         cardsArquivos.forEach((card,i)=>{const botao=card.querySelector(".desbloquear-arquivo"),status=card.querySelector(".arquivo-topo span:last-child");if(abertos.includes(i)){card.dataset.aberto="true";card.classList.add("aberto");status.textContent="✓ DESCLASSIFICADO";botao.textContent="Fechar registro ↑";} botao.addEventListener("click",()=>{const esta=card.classList.toggle("aberto");if(esta){botao.textContent="Fechar registro ↑";status.textContent="✓ DESCLASSIFICADO";card.classList.remove("carimbando");void card.offsetWidth;card.classList.add("carimbando");if(!abertos.includes(i)){abertos.push(i);localStorage.setItem("mysticArquivosAbertos",JSON.stringify(abertos));atualizar();}}else botao.textContent="Abrir novamente →";});});
-        document.getElementById("abrirArquivoFinal").addEventListener("click",()=>{const codigo=document.getElementById("codigoSecreto").value.trim();if(localStorage.getItem("mysticChave")!=="1"){mensagemCodigo.textContent="ACESSO NEGADO: encontre a chave escondida primeiro.";return;}if(codigo!=="2009"){mensagemCodigo.textContent="CÓDIGO INCORRETO. Pista: procure o início dos registros modernos na linha do tempo.";return;}mensagemCodigo.textContent="ACESSO AUTORIZADO • REGISTRO 007 DESCLASSIFICADO";segredoFinal.classList.add("mostrar");localStorage.setItem("mysticArquivo7","1");});
+        document.getElementById("abrirArquivoFinal").addEventListener("click",()=>{const codigo=document.getElementById("codigoSecreto").value.trim();if(localStorage.getItem("mysticChave")!=="1"){mensagemCodigo.textContent="ACESSO NEGADO: encontre a chave escondida primeiro.";return;}if(codigo!=="2009"){mensagemCodigo.textContent="CÓDIGO INCORRETO. Pista: procure o início dos registros modernos na linha do tempo.";return;}mensagemCodigo.textContent="ACESSO AUTORIZADO • 🔒 ARQUIVO 007 — CHAVE NECESSÁRIA DESCLASSIFICADO";segredoFinal.classList.add("mostrar");localStorage.setItem("mysticArquivo7","1");});
         atualizar();
-    </script>
+    
+(function(){const inv=document.getElementById('modoInvestigar');if(inv)inv.addEventListener('click',()=>document.body.classList.toggle('modo-investigacao'));const e=document.getElementById('eventoSurpresa');if(e)setTimeout(()=>{e.classList.add('mostrar');setTimeout(()=>e.classList.remove('mostrar'),4500)},120000);})();
+</script>
+<script>
+(function(){
+ const h=document.querySelector('header'); if(!h||document.getElementById('nivelTopo')) return;
+ const b=document.createElement('span'); b.id='nivelTopo'; b.className='nivel-topo';
+ const keys=['mysticHome','mysticPersonagens','mysticDocumento1864','mysticChave','mysticCarta','mysticCuriosidades','mysticArquivo7','mysticKatherineKP','mysticPersonagemSecreto'];
+ const n=keys.filter(k=>localStorage.getItem(k)==='1').length;
+ b.textContent=n===keys.length?'ACESSO TOTAL':localStorage.getItem('mysticArquivo7')==='1'?'NÍVEL III':localStorage.getItem('mysticChave')==='1'?'NÍVEL II':'NÍVEL I';
+ h.appendChild(b);
+})();
+</script>
 </body>
 </html>

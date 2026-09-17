@@ -3542,34 +3542,40 @@ footer hr {
 #pasta1864 .chave-foto.detectada, #pasta1864 .chave-foto.encontrada { opacity:1 !important; transform:rotate(-25deg) scale(1.3); }
 @media (max-width:650px){#pasta1864 .foto-investigacao{height:230px !important;} #pasta1864 .lente-lupa{width:115px !important;height:115px !important;}}
 
-/* =========================================================
-   AJUSTE FINAL — CHAVE NO CENTRO DA FOTO / ÁREA DA LUPA
-========================================================= */
-.chave-foto {
-    position: absolute;
-    left: 50% !important;
-    top: 50% !important;
-    right: auto !important;
-    bottom: auto !important;
-    z-index: 10;
-    padding: 4px;
-    border: none;
-    background: transparent;
-    font-size: 24px;
-    opacity: 0.05;
-    cursor: pointer;
-    transform: translate(-50%, -50%) rotate(-25deg);
-    transition: opacity 0.25s, transform 0.25s, filter 0.25s;
-}
 
-.chave-foto.detectada {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(-25deg) scale(1.35);
-    filter: drop-shadow(0 0 8px rgba(205, 166, 107, 0.9));
-}
+/* ===== NOVOS SEGREDOS / INVESTIGAÇÃO ===== */
+.btn-investigar{padding:9px 14px;border:1px solid #6d2630;background:transparent;color:#d8c3a5;font:700 11px Georgia,serif;letter-spacing:1.5px;cursor:pointer;transition:.3s}.btn-investigar:hover,.btn-investigar.ativo{background:#46151d;color:#fff;box-shadow:0 0 18px rgba(109,38,48,.35)}
+.modo-investigacao .pasta-1864,.modo-investigacao .mensagem-encontrada,.modo-investigacao .dossie-destaque,.modo-investigacao .arquivo-card{box-shadow:0 0 18px rgba(151,7,71,.16)}
+.frase-mudou{transition:.4s}.segredos-alteraram .frase-mudou{color:#970747;text-shadow:0 0 8px rgba(151,7,71,.25)}.segredos-alteraram .frase-mudou:hover{font-size:0}.segredos-alteraram .frase-mudou:hover::after{content:'ALGUNS SEGREDOS JÁ SABEM QUE VOCÊ ESTÁ AQUI.';font-size:inherit;letter-spacing:1px;color:#970747}
+.gaveta-katherine{max-height:0;overflow:hidden;opacity:0;margin:0 auto;max-width:900px;padding:0 30px;border:0 solid #6d2630;background:#0c0809;transition:.7s}.gaveta-katherine.mostrar{max-height:300px;opacity:1;padding:28px 30px;border-width:1px;margin-top:-20px;margin-bottom:50px;box-shadow:inset 0 8px 20px #000}
+.envelope-antigo{margin:22px auto;max-width:300px;padding:28px 20px;border:1px solid #806c5a;background:#17100d;position:relative}.lacre-carta{display:flex;margin:0 auto 16px;width:54px;height:54px;border-radius:50%;align-items:center;justify-content:center;background:#6d2630;color:#d8c3a5;border:3px double #9d7b57;font-weight:bold}.envelope-antigo.rompido .lacre-carta{transform:rotate(18deg) scale(.85);opacity:.45}.envelope-antigo button{background:transparent;border:1px solid #9d7b57;color:#d8c3a5;padding:10px 16px;cursor:pointer}
+.vela-apagada::after{content:'NEM TODO ARQUIVO DEVE SER ABERTO.';position:fixed;left:50%;top:52%;transform:translate(-50%,-50%);z-index:9998;color:#8d5b65;letter-spacing:4px;font:700 13px Georgia,serif;pointer-events:none;text-shadow:0 0 12px #000}.vela-apagada main{filter:brightness(.32);transition:filter .8s}.vela-apagada header{filter:brightness(.55)}
+.evento-surpresa{position:fixed;right:22px;bottom:22px;z-index:10000;padding:14px 18px;border:1px solid #6d2630;background:#100b0c;color:#cda66b;font-size:10px;letter-spacing:2px;opacity:0;transform:translateY(20px);pointer-events:none;transition:.4s}.evento-surpresa.mostrar{opacity:1;transform:none}
+#arquivoPersonagemBloqueado{position:relative}.bloqueio-personagem{position:absolute;inset:0;z-index:30;background:rgba(7,4,5,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px}.bloqueio-personagem span{font-size:32px}.bloqueio-personagem strong{color:#d8c3a5;letter-spacing:2px;margin:12px}.bloqueio-personagem p{font-size:10px;letter-spacing:1.5px}.bloqueio-personagem button{margin-top:12px;padding:9px 15px;background:transparent;border:1px solid #6d2630;color:#d8c3a5;cursor:pointer}.arquivo-desbloqueado .bloqueio-personagem{display:none}.acesso-concedido{position:absolute;inset:35% 8% auto;z-index:40;padding:18px;border:2px solid #9d7b57;background:#100b0c;color:#d8c3a5;text-align:center;letter-spacing:4px;font-weight:bold;opacity:0;transform:scale(.8);pointer-events:none}.acesso-concedido.mostrar{animation:acessoConcedido 1.8s ease}@keyframes acessoConcedido{0%{opacity:0;transform:scale(.7)}25%,70%{opacity:1;transform:scale(1)}100%{opacity:0}}
+.final-secreto{display:none;max-width:900px;margin:70px auto;padding:45px 30px;text-align:center;border:1px solid #9d7b57;background:#0d090a;box-shadow:0 0 35px rgba(109,38,48,.2)}.final-secreto.mostrar{display:block;animation:finalEntrada .8s ease}@keyframes finalEntrada{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}.documento-final{display:none;margin-top:25px;padding:25px;border:1px solid #6d2630}.documento-final.mostrar{display:block}.final-secreto button{padding:10px 18px;background:#46151d;border:1px solid #9d7b57;color:#fff;cursor:pointer}
+@media(max-width:850px){.btn-investigar{padding:7px 9px;font-size:9px}.evento-surpresa{left:14px;right:14px;bottom:14px}.vela-apagada::after{width:80%;text-align:center;line-height:1.8}}
 
-.chave-foto.encontrada {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(-25deg) scale(1.25);
-    filter: drop-shadow(0 0 10px rgba(205, 166, 107, 1));
-}
+
+/* ===== RELATÓRIO AUTOMÁTICO / NÍVEIS / TRANSMISSÃO / FOTO / FINAL ===== */
+.painel-investigador,.transmissao-interceptada,.foto-mutante-area{max-width:1050px;margin:70px auto;padding:42px;border:1px solid #4b1a22;background:#0d0809;text-align:center}
+.relatorio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;max-width:720px;margin:28px auto 0;text-align:left}
+.relatorio-grid p{margin:0;padding:14px;border-bottom:1px solid #35151b;color:#bda991}.relatorio-grid strong{color:#e7d2ad}
+.btn-transmissao{margin:22px auto;padding:13px 20px;border:1px solid #6d2630;background:#170b0e;color:#d8c3a5;font-weight:bold;letter-spacing:1px;cursor:pointer}.btn-transmissao:hover{background:#46151d;color:#fff}
+.terminal-transmissao{max-width:680px;min-height:150px;margin:15px auto 0;padding:24px;border:1px solid #4b1a22;background:#050304;color:#b9935c;text-align:left;white-space:pre-line;font-family:Consolas,monospace;line-height:1.9;letter-spacing:1px}
+.foto-mutante{position:relative;max-width:620px;height:320px;margin:25px auto;overflow:hidden;border:1px solid #6d2630;background:#050304}.foto-mutante img{width:100%;height:100%;object-fit:cover;filter:sepia(.35) brightness(.65);transition:2s}.revelacao-foto{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(18,5,8,.12);opacity:0;transition:1.5s;color:#e7d2ad;text-shadow:0 0 14px #000}.revelacao-foto span{font-size:42px}.revelacao-foto strong{font-size:52px;letter-spacing:12px}.revelacao-foto small{margin-top:12px;letter-spacing:4px}.foto-mutante.revelada img{filter:sepia(.8) brightness(.28) contrast(1.25);transform:scale(1.035)}.foto-mutante.revelada .revelacao-foto{opacity:1;background:rgba(45,7,15,.42)}.instrucao-foto{font-size:11px;letter-spacing:2px;color:#806c5a}
+.tela-conclusao{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:#030203;opacity:0;visibility:hidden;transition:1s}.tela-conclusao.mostrar{opacity:1;visibility:visible}.conclusao-conteudo{width:min(850px,90%);padding:60px 35px;border:1px solid #6d2630;text-align:center;background:#090506;box-shadow:0 0 80px rgba(109,38,48,.25)}.conclusao-conteudo>p{letter-spacing:7px;color:#9d7b57}.conclusao-conteudo>h2{font-size:42px;color:#e7d2ad}.conclusao-conteudo>strong{display:block;margin:18px 0 30px;color:#b9935c;letter-spacing:4px}.conclusao-conteudo button{padding:14px 22px;border:1px solid #8a2d3b;background:#4a1520;color:#e7d2ad;font-weight:bold;letter-spacing:1px;cursor:pointer}.ultimo-registro{display:none;margin:30px auto 0;max-width:620px;padding:28px;border:1px solid #6d2630;background:#10090b}.ultimo-registro.mostrar{display:block;animation:arquivoFinalEntrada .7s ease}.ultimo-registro span{font-size:10px;letter-spacing:3px;color:#9d7b57}
+@keyframes arquivoFinalEntrada{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@media(max-width:700px){.relatorio-grid{grid-template-columns:1fr}.painel-investigador,.transmissao-interceptada,.foto-mutante-area{padding:26px 18px}.foto-mutante{height:240px}.conclusao-conteudo>h2{font-size:28px}.revelacao-foto strong{font-size:38px}}
+
+.nivel-topo{display:inline-block;margin-left:12px;padding:7px 10px;border:1px solid #6d2630;color:#b9935c;font-size:9px;font-weight:bold;letter-spacing:2px;background:#0d0809}
+
+
+/* CORREÇÃO FINAL - REGISTRO 009 BLOQUEADO */
+#arquivoPersonagemBloqueado { position: relative !important; overflow: hidden; }
+#arquivoPersonagemBloqueado .bloqueio-personagem { position:absolute !important; inset:0 !important; z-index:999 !important; min-height:100%; background:rgba(7,4,5,.97) !important; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:28px; border:1px solid #6d2630; }
+#arquivoPersonagemBloqueado .bloqueio-personagem span { font-size:36px; }
+#arquivoPersonagemBloqueado .bloqueio-personagem strong { color:#e7d2ad; letter-spacing:3px; margin:12px 0; }
+#arquivoPersonagemBloqueado .bloqueio-personagem p { color:#9d7b57; font-size:10px; letter-spacing:1.5px; margin:5px 0; }
+#arquivoPersonagemBloqueado .bloqueio-personagem button { margin-top:16px; padding:10px 18px; background:#100b0c; border:1px solid #6d2630; color:#d8c3a5; font-weight:bold; letter-spacing:1px; cursor:pointer; }
+#arquivoPersonagemBloqueado .bloqueio-personagem button:hover { background:#46151d; color:#fff; }
+#arquivoPersonagemBloqueado.arquivo-desbloqueado .bloqueio-personagem { display:none !important; }
