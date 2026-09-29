@@ -2,1598 +2,229 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Personagens • The Vampire Diaries</title>
-
-    <link
-        rel="stylesheet"
-        href="../css/style.css"
-    >
-
-<style>
-#cardQetsiyah {
-    position: relative;
-    overflow: hidden;
-}
-.bloqueio-qetsiyah {
-    position: absolute;
-    inset: 0;
-    z-index: 30;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    text-align: center;
-    background-color: rgba(11, 8, 9, 0.96);
-    border: 1px solid #6d2630;
-}
-.bloqueio-qetsiyah h3 {
-    margin: 8px 0;
-    color: #e7d2ad;
-}
-.bloqueio-qetsiyah p {
-    color: #aaa09a;
-}
-.bloqueio-simbolo {
-    margin: 0 0 8px;
-    font-size: 28px;
-}
-#verificarChaveQetsiyah {
-    margin-top: 12px;
-    padding: 10px 16px;
-    color: #e3c898;
-    background-color: #4b1720;
-    border: 1px solid #9a7040;
-    cursor: pointer;
-}
-.mensagem-qetsiyah {
-    margin-top: 10px;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-.bloqueio-qetsiyah.acesso-concedido {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .7s;
-}
-</style>
-
+<meta charset="UTF-8">
+<title>Personagens - The Vampire Diaries</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 
+<body>
 
-<body id="topo">
+<header>
 
-    <!-- =========================================
-         HEADER
-    ========================================== -->
+<article class="titulo">
+<h1>Personagens</h1>
+<p>Conheça alguns moradores de Mystic Falls.</p>
+</article>
 
-    <header>
+<section class="menu">
+<a href="../index.html">Início</a>
+<a href="personagens.html">Personagens</a>
+<a href="curiosidades.html">Curiosidades</a>
+</section>
 
-        <section>
-            <p class="frase">
-                <small>
-                    <b>Entre segredos, escolhas e eternidade</b>
-                </small>
-            </p>
+</header>
 
-            <h1>The Vampire Diaries</h1>
-        </section>
+<main>
 
+<section class="personagens">
 
-        <nav class="header-itens">
+<p class="pequeno">MYSTIC FALLS</p>
 
-            <a href="../index.html">
-                Início
-            </a>
+<h2>Personagens</h2>
 
-            <a href="personagens.html">
-                Personagens
-            </a>
+<p class="texto-pagina">
+Humanos, vampiros, bruxas e híbridos fazem parte
+das histórias e mistérios da cidade.
+</p>
 
-            <a href="curiosidades.html">
-                Curiosidades
-            </a>
+<section class="container-cards">
 
-        <button id="modoInvestigar" class="btn-investigar" type="button">🔎 INVESTIGAR</button>
-            </nav>
+<article class="card">
 
-    </header>
+<img
+src="../img/Elena.png"
+alt="Personagem Elena Gilbert"
+>
 
+<article class="card-conteudo">
+<h3>Elena Gilbert</h3>
 
-    <!-- =========================================
-         CONTEÚDO PRINCIPAL
-    ========================================== -->
+<p>
+Uma jovem que acaba entrando
+no mundo sobrenatural de Mystic Falls.
+</p>
+</article>
 
-    <main>
+</article>
 
-        <!-- =====================================
-             CABEÇALHO
-        ====================================== -->
 
-        <section class="cabecalho-pagina">
+<article class="card">
 
-            <p class="pequeno">
-                <small>
-                    <b>ARQUIVO DE PERSONAGENS</b>
-                </small>
-            </p>
+<img
+src="../img/Damon.png"
+alt="Personagem Damon Salvatore"
+>
 
-            <h2>Personagens</h2>
+<article class="card-conteudo">
+<h3>Damon Salvatore</h3>
 
-            <p>
-                Pesquise os registros, filtre por natureza
-                e revele as identidades sobrenaturais
-                encontradas nos arquivos de Mystic Falls.
-            </p>
+<p>
+Vampiro sarcástico e impulsivo,
+irmão mais velho de Stefan.
+</p>
+</article>
 
-        </section>
+</article>
 
 
-        <!-- =====================================
-             PESQUISA
-        ====================================== -->
+<article class="card">
 
-        <section class="controle-personagens">
+<img
+src="../img/Stefan.png"
+alt="Personagem Stefan Salvatore"
+>
 
-            <div class="pesquisa-personagem">
+<article class="card-conteudo">
+<h3>Stefan Salvatore</h3>
 
-                <label for="pesquisa">
-                    PROCURAR NOS ARQUIVOS
-                </label>
+<p>
+Vampiro que tenta controlar seus
+instintos e preservar sua humanidade.
+</p>
+</article>
 
-                <input
-                    id="pesquisa"
-                    type="text"
-                    placeholder="Pesquisar personagem..."
-                >
+</article>
 
-            </div>
 
+<article class="card">
 
-            <div class="resultado-personagens">
+<img
+src="../img/Katherine.png"
+alt="Personagem Katherine Pierce"
+>
 
-                <span id="quantidadePersonagens">
-                    09
-                </span>
+<article class="card-conteudo">
+<h3>Katherine Pierce</h3>
 
-                registros encontrados
+<p>
+Uma vampira inteligente e misteriosa
+ligada ao passado dos irmãos Salvatore.
+</p>
+</article>
 
-            </div>
+</article>
 
-        </section>
 
+<article class="card">
 
-        <!-- =====================================
-             FILTROS
-        ====================================== -->
+<img
+src="../img/Klaus.png"
+alt="Personagem Klaus Mikaelson"
+>
 
-        <section class="filtros-personagens">
+<article class="card-conteudo">
+<h3>Klaus Mikaelson</h3>
 
-            <button
-                class="filtro ativo"
-                data-filtro="todos"
-                type="button"
-            >
-                Todos
-            </button>
+<p>
+Um híbrido da família Mikaelson,
+conhecido por sua força e poder.
+</p>
+</article>
 
-            <button
-                class="filtro"
-                data-filtro="vampiro"
-                type="button"
-            >
-                Vampiros
-            </button>
+</article>
 
-            <button
-                class="filtro"
-                data-filtro="bruxa"
-                type="button"
-            >
-                Bruxas
-            </button>
 
-            <button
-                class="filtro"
-                data-filtro="original"
-                type="button"
-            >
-                Originais
-            </button>
+<article class="card">
 
-            <button
-                class="filtro"
-                data-filtro="hibrido"
-                type="button"
-            >
-                Híbridos
-            </button>
+<img
+src="../img/Bonnie.png"
+alt="Personagem Bonnie Bennett"
+>
 
-        </section>
+<article class="card-conteudo">
+<h3>Bonnie Bennett</h3>
 
+<p>
+Uma poderosa bruxa da família Bennett
+e grande amiga de Elena e Caroline.
+</p>
+</article>
 
-        <!-- =====================================
-             GALERIA DE PERSONAGENS
-        ====================================== -->
+</article>
 
-        <section
-            class="galeria"
-            id="galeriaPersonagens"
-        >
 
+<article class="card">
 
-            <!-- ELENA -->
+<img
+src="../img/Caroline.png"
+alt="Personagem Caroline Forbes"
+>
 
-            <article
-                class="card card-registro"
-                data-nome="elena gilbert"
-                data-tipo="vampiro"
-            >
+<article class="card-conteudo">
+<h3>Caroline Forbes</h3>
 
-                <div class="registro-topo">
+<p>
+Uma jovem determinada que passa por
+grandes mudanças durante sua história.
+</p>
+</article>
 
-                    <span>REGISTRO 001</span>
+</article>
 
-                    <button
-                        class="favorito"
-                        type="button"
-                        aria-label="Favoritar Elena Gilbert"
-                    >
-                        ☆
-                    </button>
 
-                </div>
+<article class="card">
 
+<img
+src="../img/Rebekah.png"
+alt="Personagem Rebekah Mikaelson"
+>
 
-                <div class="area-foto">
+<article class="card-conteudo">
+<h3>Rebekah Mikaelson</h3>
 
-                    <img
-                        class="imagem-personagem"
-                        src="../img/Elena.png"
-                        alt="Elena Gilbert"
+<p>
+Uma vampira Original e integrante
+da antiga família Mikaelson.
+</p>
+</article>
 
-                        data-normal="../img/Elena.png"
-                        data-alternativa="../img/ElenaVampira.png"
+</article>
 
-                        data-estado="normal"
 
-                        data-normal-texto="████████"
-                        data-alternativa-texto="VAMPIRA"
-                    >
+<article class="card">
 
-                    <span class="natureza">
-                        NATUREZA: ████████
-                    </span>
+<img
+src="../img/Qetsiyah.png"
+alt="Personagem Qetsiyah"
+>
 
-                    <span class="carimbo-identificado">
-                        IDENTIFICADO
-                    </span>
+<article class="card-conteudo">
+<h3>Qetsiyah</h3>
 
-                </div>
+<p>
+Uma antiga e poderosa bruxa ligada
+a importantes acontecimentos sobrenaturais.
+</p>
+</article>
 
+</article>
 
-                <h3>Elena Gilbert</h3>
+</section>
 
-                <p>
-                    Uma das personagens centrais
-                    da história de Mystic Falls.
-                </p>
+</section>
 
+</main>
 
-                <button
-                    class="revelar-natureza"
-                    type="button"
-                >
-                    Revelar natureza
-                </button>
 
+<footer>
 
-                <a
-                    class="ver-mais"
-                    href="elena.html"
-                >
-                    Abrir arquivo →
-                </a>
+<p>The Vampire Diaries • Personagens</p>
 
-            </article>
+<a href="../index.html">
+Voltar para o início
+</a>
 
-
-            <!-- DAMON -->
-
-            <article
-                class="card card-registro"
-                data-nome="damon salvatore"
-                data-tipo="vampiro"
-            >
-
-                <div class="registro-topo">
-
-                    <span>REGISTRO 002</span>
-
-                    <button
-                        class="favorito"
-                        type="button"
-                        aria-label="Favoritar Damon Salvatore"
-                    >
-                        ☆
-                    </button>
-
-                </div>
-
-
-                <div class="area-foto">
-
-                    <img
-                        class="imagem-personagem"
-                        src="../img/Damon.png"
-                        alt="Damon Salvatore"
-
-                        data-normal="../img/Damon.png"
-                        data-alternativa="../img/DamonVampiro.png"
-
-                        data-estado="normal"
-
-                        data-normal-texto="████████"
-                        data-alternativa-texto="VAMPIRO"
-                    >
-
-                    <span class="natureza">
-                        NATUREZA: ████████
-                    </span>
-
-                    <span class="carimbo-identificado">
-                        IDENTIFICADO
-                    </span>
-
-                </div>
-
-
-                <h3>Damon Salvatore</h3>
-
-                <p>
-                    Irmão de Stefan e um dos vampiros
-                    mais conhecidos de Mystic Falls.
-                </p>
-
-
-                <button
-                    class="revelar-natureza"
-                    type="button"
-                >
-                    Revelar natureza
-                </button>
-
-
-                <a
-                    class="ver-mais"
-                    href="damon.html"
-                >
-                    Abrir arquivo →
-                </a>
-
-            </article>
-
-
-            <!-- STEFAN -->
-
-            <article
-                class="card card-registro"
-                data-nome="stefan salvatore"
-                data-tipo="vampiro"
-            >
-
-                <div class="registro-topo">
-
-                    <span>REGISTRO 003</span>
-
-                    <button
-                        class="favorito"
-                        type="button"
-                        aria-label="Favoritar Stefan Salvatore"
-                    >
-                        ☆
-                    </button>
-
-                </div>
-
-
-                <div class="area-foto">
-
-                    <img
-                        class="imagem-personagem"
-                        src="../img/Stefan.png"
-                        alt="Stefan Salvatore"
-
-                        data-normal="../img/Stefan.png"
-                        data-alternativa="../img/StefanVampiro.png"
-
-                        data-estado="normal"
-
-                        data-normal-texto="████████"
-                        data-alternativa-texto="VAMPIRO"
-                    >
-
-                    <span class="natureza">
-                        NATUREZA: ████████
-                    </span>
-
-                    <span class="carimbo-identificado">
-                        IDENTIFICADO
-                    </span>
-
-                </div>
-
-
-                <h3>Stefan Salvatore</h3>
-
-                <p>
-                    Irmão de Damon e personagem ligado
-                    diretamente à história de Elena.
-                </p>
-
-
-                <button
-                    class="revelar-natureza"
-                    type="button"
-                >
-                    Revelar natureza
-                </button>
-
-
-                <a
-                    class="ver-mais"
-                    href="stefan.html"
-                >
-                    Abrir arquivo →
-                </a>
-
-            </article>
-
-
-            <!-- KATHERINE -->
-
-            <article
-                class="card card-registro"
-                data-nome="katherine pierce katerina petrova"
-                data-tipo="vampiro"
-            >
-
-                <div class="registro-topo">
-
-                    <span>REGISTRO 004</span>
-
-                    <button
-                        class="favorito"
-                        type="button"
-                        aria-label="Favoritar Katherine Pierce"
-                    >
-                        ☆
-                    </button>
-
-                </div>
-
-
-                <div class="area-foto">
-
-                    <img
-                        class="imagem-personagem"
-                        src="../img/Katherine.png"
-                        alt="Katherine Pierce"
-
-                        data-normal="../img/Katherine.png"
-                        data-alternativa="../img/KatherineVampira.png"
-
-                        data-estado="normal"
-
-                        data-normal-texto="████████"
-                        data-alternativa-texto="VAMPIRA"
-                    >
-
-                    <span class="natureza">
-                        NATUREZA: ████████
-                    </span>
-
-                    <span class="carimbo-identificado">
-                        IDENTIFICADO
-                    </span>
-
-                </div>
-
-
-                <h3>Katherine Pierce</h3>
-
-                <p>
-                    Também conhecida como Katerina Petrova,
-                    possui uma longa história de sobrevivência.
-                </p>
-
-
-                <button
-                    class="revelar-natureza"
-                    type="button"
-                >
-                    Revelar natureza
-                </button>
-
-
-                <a
-                    class="ver-mais"
-                    href="katherine.html"
-                >
-                    Abrir arquivo →
-                </a>
-
-            </article>
-
-
-            <!-- KLAUS -->
-
-            <article
-                class="card card-registro"
-                data-nome="klaus mikaelson"
-                data-tipo="vampiro original hibrido"
-            >
-
-                <div class="registro-topo">
-
-                    <span>REGISTRO 005</span>
-
-                    <button
-                        class="favorito"
-                        type="button"
-                        aria-label="Favoritar Klaus Mikaelson"
-                    >
-                        ☆
-                    </button>
-
-                </div>
-
-
-                <div class="area-foto">
-
-                    <img
-                        class="imagem-personagem"
-                        src="../img/Klaus.png"
-                        alt="Klaus Mikaelson"
-
-                        data-normal="../img/Klaus.png"
-                        data-alternativa="../img/KlausHibrido.png"
-
-                        data-estado="normal"
-
-                        data-normal-texto="████████"
-                        data-alternativa-texto="HÍBRIDO ORIGINAL"
-                    >
-
-                    <span class="natureza">
-                        NATUREZA: ████████
-                    </span>
-
-                    <span class="carimbo-identificado">
-                        IDENTIFICADO
-                    </span>
-
-                </div>
-
-
-                <h3>Klaus Mikaelson</h3>
-
-                <p>
-                    Integrante da família Mikaelson
-                    e uma figura importante entre
-                    os Originais.
-                </p>
-
-
-                <button
-                    class="revelar-natureza"
-                    type="button"
-                >
-                    Revelar natureza
-                </button>
-
-
-                <a
-                    class="ver-mais"
-                    href="klaus.html"
-                >
-                    Abrir arquivo →
-                </a>
-
-            </article>
-
-
-            <!-- BONNIE -->
-
-            <article
-                class="card card-registro"
-                data-nome="bonnie bennett"
-                data-tipo="bruxa"
-            >
-
-                <div class="registro-topo">
-
-                    <span>REGISTRO 006</span>
-
-                    <button
-                        class="favorito"
-                        type="button"
-                        aria-label="Favoritar Bonnie Bennett"
-                    >
-                        ☆
-                    </button>
-
-                </div>
-
-
-                <div class="area-foto">
-
-                    <img
-                        class="imagem-personagem"
-                        src="../img/Bonnie.png"
-                        alt="Bonnie Bennett"
-
-                        data-normal="../img/Bonnie.png"
-                        data-alternativa="../img/BonnieBruxa.png"
-
-                        data-estado="normal"
-
-                        data-normal-texto="████████"
-                        data-alternativa-texto="BRUXA"
-                    >
-
-                    <span class="natureza">
-                        NATUREZA: ████████
-                    </span>
-
-                    <span class="carimbo-identificado">
-                        IDENTIFICADO
-                    </span>
-
-                </div>
-
-
-                <h3>Bonnie Bennett</h3>
-
-                <p>
-                    Integrante da linhagem Bennett
-                    e uma das principais bruxas da história.
-                </p>
-
-
-                <button
-                    class="revelar-natureza"
-                    type="button"
-                >
-                    Revelar natureza
-                </button>
-
-
-                <a
-                    class="ver-mais"
-                    href="bonnie.html"
-                >
-                    Abrir arquivo →
-                </a>
-
-            </article>
-
-
-            <!-- CAROLINE -->
-
-            <article
-                class="card card-registro"
-                data-nome="caroline forbes"
-                data-tipo="vampiro"
-            >
-
-                <div class="registro-topo">
-
-                    <span>REGISTRO 007</span>
-
-                    <button
-                        class="favorito"
-                        type="button"
-                        aria-label="Favoritar Caroline Forbes"
-                    >
-                        ☆
-                    </button>
-
-                </div>
-
-
-                <div class="area-foto">
-
-                    <img
-                        class="imagem-personagem"
-                        src="../img/Caroline.png"
-                        alt="Caroline Forbes"
-
-                        data-normal="../img/Caroline.png"
-                        data-alternativa="../img/CarolineVampira.png"
-
-                        data-estado="normal"
-
-                        data-normal-texto="████████"
-                        data-alternativa-texto="VAMPIRA"
-                    >
-
-                    <span class="natureza">
-                        NATUREZA: ████████
-                    </span>
-
-                    <span class="carimbo-identificado">
-                        IDENTIFICADO
-                    </span>
-
-                </div>
-
-
-                <h3>Caroline Forbes</h3>
-
-                <p>
-                    Uma personagem cuja trajetória muda
-                    profundamente ao longo da história.
-                </p>
-
-
-                <button
-                    class="revelar-natureza"
-                    type="button"
-                >
-                    Revelar natureza
-                </button>
-
-
-                <a
-                    class="ver-mais"
-                    href="caroline.html"
-                >
-                    Abrir arquivo →
-                </a>
-
-            </article>
-
-
-            <!-- REBEKAH -->
-
-            <article id="cardQetsiyah"
-                class="card card-registro"
-                data-nome="rebekah mikaelson"
-                data-tipo="vampiro original"
-            >
-
-                <div class="registro-topo">
-
-                    <span>REGISTRO 008</span>
-
-                    <button
-                        class="favorito"
-                        type="button"
-                        aria-label="Favoritar Rebekah Mikaelson"
-                    >
-                        ☆
-                    </button>
-
-                </div>
-
-
-                <div class="area-foto">
-
-                    <img
-                        class="imagem-personagem"
-                        src="../img/Rebekah.png"
-                        alt="Rebekah Mikaelson"
-
-                        data-normal="../img/Rebekah.png"
-                        data-alternativa="../img/RebekahVampira.png"
-
-                        data-estado="normal"
-
-                        data-normal-texto="████████"
-                        data-alternativa-texto="VAMPIRA ORIGINAL"
-                    >
-
-                    <span class="natureza">
-                        NATUREZA: ████████
-                    </span>
-
-                    <span class="carimbo-identificado">
-                        IDENTIFICADO
-                    </span>
-
-                </div>
-
-
-                <h3>Rebekah Mikaelson</h3>
-
-                <p>
-                    Uma das vampiras Originais
-                    e integrante da família Mikaelson.
-                </p>
-
-
-                <button
-                    class="revelar-natureza"
-                    type="button"
-                >
-                    Revelar natureza
-                </button>
-
-
-                <a
-                    class="ver-mais"
-                    href="rebekah.html"
-                >
-                    Abrir arquivo →
-                </a>
-
-            </article>
-
-
-            <!-- QETSIYAH -->
-
-            <article
-                class="card card-registro"
-                data-nome="qetsiyah tessa"
-                data-tipo="bruxa"
-             id="arquivoPersonagemBloqueado"><div id="bloqueioPersonagem" class="bloqueio-personagem"><span>🔒</span><strong>REGISTRO BLOQUEADO</strong><p>CHAVE DE ACESSO NECESSÁRIA</p><p>Encontre a chave escondida no Documento 1864.</p><button id="desbloquearPersonagem" type="button">VERIFICAR CHAVE</button></div><div id="acessoConcedido" class="acesso-concedido">ACESSO CONCEDIDO</div>
-
-                <div class="registro-topo">
-
-                    <span>REGISTRO 009</span>
-
-                    <button
-                        class="favorito"
-                        type="button"
-                        aria-label="Favoritar Qetsiyah"
-                    >
-                        ☆
-                    </button>
-
-                </div>
-
-
-                <div class="area-foto">
-
-                    <img
-                        class="imagem-personagem"
-                        src="../img/Qetsiyah.png"
-                        alt="Qetsiyah"
-
-                        data-normal="../img/Qetsiyah.png"
-                        data-alternativa="../img/QetsiyahBruxa.png"
-
-                        data-estado="normal"
-
-                        data-normal-texto="████████"
-                        data-alternativa-texto="BRUXA"
-                    >
-
-                    <span class="natureza">
-                        NATUREZA: ████████
-                    </span>
-
-                    <span class="carimbo-identificado">
-                        IDENTIFICADO
-                    </span>
-
-                </div>
-
-
-                <h3>Qetsiyah</h3>
-
-                <p>
-                    Uma poderosa bruxa ligada
-                    a acontecimentos antigos
-                    do mundo sobrenatural.
-                </p>
-
-
-                <button
-                    class="revelar-natureza"
-                    type="button"
-                >
-                    Revelar natureza
-                </button>
-
-
-                <a
-                    class="ver-mais"
-                    href="qetsiyah.html"
-                >
-                    Abrir arquivo →
-                </a>
-
-            
-                <section class="bloqueio-qetsiyah" id="bloqueioQetsiyah">
-                    <p class="bloqueio-simbolo">🔒</p>
-                    <p class="pequeno"><small><b>REGISTRO 009 • ACESSO RESTRITO</b></small></p>
-                    <h3>ARQUIVO BLOQUEADO</h3>
-                    <p>Uma chave é necessária para liberar este registro.</p>
-                    <button id="verificarChaveQetsiyah" type="button">VERIFICAR CHAVE</button>
-                    <p id="mensagemQetsiyah" class="mensagem-qetsiyah">CHAVE NÃO ENCONTRADA</p>
-                </section>
-
-            </article>
-
-        </section>
-
-
-        <!-- =====================================
-             FAVORITOS
-        ====================================== -->
-
-        <section class="painel-favoritos">
-
-            <p class="pequeno">
-                <small>
-                    <b>ARQUIVOS MARCADOS</b>
-                </small>
-            </p>
-
-            <h2>
-                Favoritos:
-                <span id="numeroFavoritos">0</span>
-            </h2>
-
-            <p>
-                Clique na estrela de um registro
-                para adicioná-lo aos favoritos.
-            </p>
-
-        </section>
-
-
-        <!-- =====================================
-             PERSONAGEM ALEATÓRIO
-        ====================================== -->
-
-        <section class="personagem-aleatorio">
-
-            <p class="pequeno">
-                <small>
-                    <b>SELEÇÃO DE REGISTRO</b>
-                </small>
-            </p>
-
-            <h2>
-                Não sabe por onde começar?
-            </h2>
-
-            <p>
-                Deixe os arquivos escolherem
-                um personagem.
-            </p>
-
-
-            <button
-                id="personagemAleatorio"
-                type="button"
-            >
-                Descobrir personagem
-            </button>
-
-
-            <!-- FICHA DO PERSONAGEM SORTEADO -->
-
-            <article
-                id="registroSorteado"
-                class="registro-sorteado"
-            >
-
-                <p class="registro-encontrado">
-                    REGISTRO ENCONTRADO
-                </p>
-
-
-                <div class="foto-sorteada">
-
-                    <img
-                        id="fotoSorteada"
-                        src="../img/Elena.png"
-                        alt="Personagem selecionado"
-                    >
-
-
-                    <span class="selo-sorteado">
-                        REGISTRO<br>
-                        ENCONTRADO
-                    </span>
-
-                </div>
-
-
-                <p id="numeroRegistroSorteado">
-                    REGISTRO 001
-                </p>
-
-
-                <h3 id="nomeSorteado">
-                    Elena Gilbert
-                </h3>
-
-
-                <p id="naturezaSorteada">
-                    Vampira
-                </p>
-
-
-                <!-- NOVO LINK -->
-
-                <a
-                    id="linkPersonagemSorteado"
-                    class="ver-personagem-sorteado"
-                    href="elena.html"
-                >
-                    Ver personagem →
-                </a>
-
-            </article>
-
-        </section>
-
-
-        <!-- =====================================
-             VOLTAR AO TOPO
-        ====================================== -->
-
-        <section class="area-voltar-topo">
-
-            <a href="#topo">
-                ↑ Voltar ao topo
-            </a>
-
-        </section>
-
-    <div id="eventoSurpresa" class="evento-surpresa">⚠ ATIVIDADE DETECTADA NOS ARQUIVOS</div></main>
-
-
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
-
-    <footer>
-
-        <hr>
-
-        <p>
-            <small>
-                The Vampire Diaries • by yasmin
-            </small>
-        </p>
-
-    </footer>
-
-
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
-
-    <script>
-
-        /* =========================================
-           CARDS
-        ========================================== */
-
-        const cards =
-            document.querySelectorAll(".card-registro");
-
-
-        /* =========================================
-           PESQUISA E FILTROS
-        ========================================== */
-
-        const pesquisa =
-            document.getElementById("pesquisa");
-
-        const filtros =
-            document.querySelectorAll(".filtro");
-
-        const quantidade =
-            document.getElementById(
-                "quantidadePersonagens"
-            );
-
-        let filtroAtual = "todos";
-
-
-        function atualizarPersonagens() {
-
-            const textoPesquisa =
-                pesquisa.value
-                    .toLowerCase()
-                    .trim();
-
-            let visiveis = 0;
-
-
-            cards.forEach(function(card) {
-
-                const nome =
-                    card.dataset.nome;
-
-                const tipos =
-                    card.dataset.tipo;
-
-
-                const correspondePesquisa =
-                    nome.includes(textoPesquisa);
-
-
-                const correspondeFiltro =
-                    filtroAtual === "todos" ||
-                    tipos.includes(filtroAtual);
-
-
-                if (
-                    correspondePesquisa &&
-                    correspondeFiltro
-                ) {
-
-                    card.style.display = "flex";
-
-                    visiveis++;
-
-                } else {
-
-                    card.style.display = "none";
-
-                }
-
-            });
-
-
-            quantidade.textContent =
-                String(visiveis).padStart(2, "0");
-
-        }
-
-
-        pesquisa.addEventListener(
-            "input",
-            atualizarPersonagens
-        );
-
-
-        filtros.forEach(function(botao) {
-
-            botao.addEventListener(
-                "click",
-                function() {
-
-                    filtros.forEach(function(item) {
-
-                        item.classList.remove("ativo");
-
-                    });
-
-
-                    botao.classList.add("ativo");
-
-                    filtroAtual =
-                        botao.dataset.filtro;
-
-
-                    atualizarPersonagens();
-
-                }
-            );
-
-        });
-
-
-
-        /* =========================================
-           REVELAR NATUREZA
-        ========================================== */
-
-        const botoesNatureza =
-            document.querySelectorAll(
-                ".revelar-natureza"
-            );
-
-
-        botoesNatureza.forEach(function(botao) {
-
-            botao.addEventListener(
-                "click",
-                function() {
-
-                    const card =
-                        botao.closest(
-                            ".card-registro"
-                        );
-
-                    const imagem =
-                        card.querySelector(
-                            ".imagem-personagem"
-                        );
-
-                    const natureza =
-                        card.querySelector(
-                            ".natureza"
-                        );
-
-
-                    if (
-                        imagem.dataset.estado ===
-                        "normal"
-                    ) {
-
-                        imagem.src =
-                            imagem.dataset.alternativa;
-
-                        imagem.dataset.estado =
-                            "alternativa";
-
-
-                        natureza.textContent =
-                            "NATUREZA: " +
-                            imagem.dataset.alternativaTexto;
-
-
-                        botao.textContent =
-                            "Ocultar natureza";
-
-
-                        card.classList.add(
-                            "natureza-revelada"
-                        );
-
-                    } else {
-
-                        imagem.src =
-                            imagem.dataset.normal;
-
-                        imagem.dataset.estado =
-                            "normal";
-
-
-                        natureza.textContent =
-                            "NATUREZA: " +
-                            imagem.dataset.normalTexto;
-
-
-                        botao.textContent =
-                            "Revelar natureza";
-
-
-                        card.classList.remove(
-                            "natureza-revelada"
-                        );
-
-                    }
-
-                }
-            );
-
-        });
-
-
-
-        /* =========================================
-           CLICAR NA FOTO TAMBÉM REVELA
-        ========================================== */
-
-        const imagens =
-            document.querySelectorAll(
-                ".imagem-personagem"
-            );
-
-
-        imagens.forEach(function(imagem) {
-
-            imagem.addEventListener(
-                "click",
-                function() {
-
-                    const card =
-                        imagem.closest(
-                            ".card-registro"
-                        );
-
-                    const botao =
-                        card.querySelector(
-                            ".revelar-natureza"
-                        );
-
-
-                    botao.click();
-
-                }
-            );
-
-        });
-
-
-
-        /* =========================================
-           FAVORITOS
-        ========================================== */
-
-        const favoritos =
-            document.querySelectorAll(
-                ".favorito"
-            );
-
-        const numeroFavoritos =
-            document.getElementById(
-                "numeroFavoritos"
-            );
-
-        let totalFavoritos = 0;
-
-
-        favoritos.forEach(function(botao) {
-
-            botao.addEventListener(
-                "click",
-                function() {
-
-                    if (
-                        botao.classList.contains(
-                            "marcado"
-                        )
-                    ) {
-
-                        botao.classList.remove(
-                            "marcado"
-                        );
-
-                        botao.textContent = "☆";
-
-                        totalFavoritos--;
-
-                    } else {
-
-                        botao.classList.add(
-                            "marcado"
-                        );
-
-                        botao.textContent = "★";
-
-                        totalFavoritos++;
-
-                    }
-
-
-                    numeroFavoritos.textContent =
-                        totalFavoritos;
-
-                }
-            );
-
-        });
-
-
-
-        /* =========================================
-           PERSONAGEM ALEATÓRIO
-        ========================================== */
-
-        const botaoAleatorio =
-            document.getElementById(
-                "personagemAleatorio"
-            );
-
-
-        const registroSorteado =
-            document.getElementById(
-                "registroSorteado"
-            );
-
-
-        const fotoSorteada =
-            document.getElementById(
-                "fotoSorteada"
-            );
-
-
-        const nomeSorteado =
-            document.getElementById(
-                "nomeSorteado"
-            );
-
-
-        const naturezaSorteada =
-            document.getElementById(
-                "naturezaSorteada"
-            );
-
-
-        const numeroRegistroSorteado =
-            document.getElementById(
-                "numeroRegistroSorteado"
-            );
-
-
-        const linkPersonagemSorteado =
-            document.getElementById(
-                "linkPersonagemSorteado"
-            );
-
-
-        const personagensSorteio = [
-
-            {
-                nome: "Elena Gilbert",
-                foto: "../img/Elena.png",
-                natureza: "Vampira",
-                registro: "REGISTRO 001",
-                pagina: "elena.html"
-            },
-
-            {
-                nome: "Damon Salvatore",
-                foto: "../img/Damon.png",
-                natureza: "Vampiro",
-                registro: "REGISTRO 002",
-                pagina: "damon.html"
-            },
-
-            {
-                nome: "Stefan Salvatore",
-                foto: "../img/Stefan.png",
-                natureza: "Vampiro",
-                registro: "REGISTRO 003",
-                pagina: "stefan.html"
-            },
-
-            {
-                nome: "Katherine Pierce",
-                foto: "../img/Katherine.png",
-                natureza: "Vampira",
-                registro: "REGISTRO 004",
-                pagina: "katherine.html"
-            },
-
-            {
-                nome: "Klaus Mikaelson",
-                foto: "../img/Klaus.png",
-                natureza: "Híbrido Original",
-                registro: "REGISTRO 005",
-                pagina: "klaus.html"
-            },
-
-            {
-                nome: "Bonnie Bennett",
-                foto: "../img/Bonnie.png",
-                natureza: "Bruxa",
-                registro: "REGISTRO 006",
-                pagina: "bonnie.html"
-            },
-
-            {
-                nome: "Caroline Forbes",
-                foto: "../img/Caroline.png",
-                natureza: "Vampira",
-                registro: "REGISTRO 007",
-                pagina: "caroline.html"
-            },
-
-            {
-                nome: "Rebekah Mikaelson",
-                foto: "../img/Rebekah.png",
-                natureza: "Vampira Original",
-                registro: "REGISTRO 008",
-                pagina: "rebekah.html"
-            },
-
-            {
-                nome: "Qetsiyah",
-                foto: "../img/Qetsiyah.png",
-                natureza: "Bruxa",
-                registro: "REGISTRO 009",
-                pagina: "qetsiyah.html"
-            }
-
-        ];
-
-
-        botaoAleatorio.addEventListener(
-            "click",
-            function() {
-
-                const numero =
-                    Math.floor(
-                        Math.random() *
-                        personagensSorteio.length
-                    );
-
-
-                const personagem =
-                    personagensSorteio[numero];
-
-
-                fotoSorteada.src =
-                    personagem.foto;
-
-
-                fotoSorteada.alt =
-                    personagem.nome;
-
-
-                nomeSorteado.textContent =
-                    personagem.nome;
-
-
-                naturezaSorteada.textContent =
-                    personagem.natureza;
-
-
-                numeroRegistroSorteado.textContent =
-                    personagem.registro;
-
-
-                /* MUDA O LINK AUTOMATICAMENTE */
-
-                linkPersonagemSorteado.href =
-                    personagem.pagina;
-
-
-                registroSorteado.classList.add(
-                    "mostrar"
-                );
-
-            }
-        );
-
-
-        localStorage.setItem("mysticPersonagens", "1");
-        document.querySelectorAll(".nome-visitante-site").forEach(el => el.textContent=(localStorage.getItem("mysticNome")||"VISITANTE").toUpperCase());
-        function atualizarRelogio(){const a=new Date(),h=String(a.getHours()).padStart(2,"0"),m=String(a.getMinutes()).padStart(2,"0"),e=document.getElementById("relogioMystic");if(e)e.textContent=`MYSTIC FALLS • ${h}:${m}`;} atualizarRelogio();setInterval(atualizarRelogio,1000);
-    
-// ===== ARQUIVO BLOQUEADO + MODO INVESTIGAÇÃO =====
-(function(){const inv=document.getElementById('modoInvestigar');if(inv)inv.addEventListener('click',()=>{document.body.classList.toggle('modo-investigacao');inv.classList.toggle('ativo');});const card=document.getElementById('arquivoPersonagemBloqueado'),lock=document.getElementById('bloqueioPersonagem'),btn=document.getElementById('desbloquearPersonagem'),ok=document.getElementById('acessoConcedido');function aberto(){return localStorage.getItem('mysticPersonagemSecretoV3')==='1'}function render(){if(card)card.classList.toggle('arquivo-desbloqueado',aberto())}if(btn)btn.addEventListener('click',()=>{if(localStorage.getItem('mysticChave')!=='1'){btn.textContent='CHAVE NÃO ENCONTRADA';return;}localStorage.setItem('mysticPersonagemSecretoV3','1');render();ok.classList.add('mostrar');setTimeout(()=>ok.classList.remove('mostrar'),1800);});render();const e=document.getElementById('eventoSurpresa');if(e)setTimeout(()=>{e.classList.add('mostrar');setTimeout(()=>e.classList.remove('mostrar'),4500)},120000);})();
-</script>
-
-<script>
-(function(){
- const h=document.querySelector('header'); if(!h||document.getElementById('nivelTopo')) return;
- const b=document.createElement('span'); b.id='nivelTopo'; b.className='nivel-topo';
- const keys=['mysticHome','mysticPersonagens','mysticDocumento1864','mysticChave','mysticCarta','mysticCuriosidades','mysticArquivo7','mysticKatherineKP','mysticPersonagemSecretoV3'];
- const n=keys.filter(k=>localStorage.getItem(k)==='1').length;
- b.textContent=n===keys.length?'ACESSO TOTAL':localStorage.getItem('mysticArquivo7')==='1'?'NÍVEL III':localStorage.getItem('mysticChave')==='1'?'NÍVEL II':'NÍVEL I';
- h.appendChild(b);
-})();
-</script>
-
-<script>
-(function () {
-    const bloqueio = document.getElementById("bloqueioQetsiyah");
-    const botao = document.getElementById("verificarChaveQetsiyah");
-    const mensagem = document.getElementById("mensagemQetsiyah");
-    const chaveDesbloqueio = "mysticQetsiyahDesbloqueadaV4";
-
-    if (!bloqueio || !botao || !mensagem) return;
-
-    if (localStorage.getItem(chaveDesbloqueio) === "1") {
-        bloqueio.style.display = "none";
-    }
-
-    botao.addEventListener("click", function () {
-        if (localStorage.getItem("mysticChave") === "1") {
-            mensagem.textContent = "ACESSO CONCEDIDO";
-            bloqueio.classList.add("acesso-concedido");
-            localStorage.setItem(chaveDesbloqueio, "1");
-
-            setTimeout(function () {
-                bloqueio.style.display = "none";
-            }, 700);
-        } else {
-            mensagem.textContent = "CHAVE NÃO ENCONTRADA";
-        }
-    });
-})();
-</script>
+</footer>
 
 </body>
 
